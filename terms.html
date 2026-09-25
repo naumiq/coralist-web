@@ -14,20 +14,39 @@
   <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-row">
-      <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <div class="brand-icon-mask"></div>
-        <span class="brand-text">Coralist</span>
-      </a>
+      <!-- Left Column: Navigation links & mobile hamburger -->
+      <div class="nav-col-left">
+        <button class="mobile-toggle-btn" aria-label="Toggle navigation">☰</button>
+        <nav class="desktop-nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </nav>
+      </div>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="terms.html" class="active">Terms & Conditions</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
-      </nav>
+      <!-- Center Column: Brand Logo & Title (Stacked Silhouette & CORALIST) -->
+      <div class="nav-col-center">
+        <a href="index.html" class="brand-link" aria-label="Coralist Home">
+          <div class="brand-icon-mask"></div>
+          <span class="brand-text">Coralist</span>
+        </a>
+      </div>
 
-      <button class="mobile-toggle-btn" aria-label="Toggle navigation">☰</button>
+      <!-- Right Column: Secondary Action & Telemetry Wave Icon -->
+      <div class="nav-col-right">
+        <a href="mailto:beta@coralist.app?subject=Coralist%20Beta%20Access%20Request"
+          class="btn btn-secondary btn-header-cta">Beta Access</a>
+        <div class="header-waves-icon" aria-hidden="true" title="Coralist Marine Telemetry">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+            <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+            <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+          </svg>
+        </div>
+      </div>
     </div>
   </header>
 
