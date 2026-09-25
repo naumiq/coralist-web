@@ -84,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 76px;
+  height: 88px;
 }
 
 /* Brand Logo (Centered Stack: Silhouette on top, CORALIST underneath) */
@@ -93,10 +93,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
   text-decoration: none;
   cursor: pointer;
-  padding: 4px 16px;
+  padding: 6px 16px;
   transition: opacity 0.15s ease;
 }
 
@@ -105,8 +105,8 @@ body {
 }
 
 .brand-icon-mask {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   background-color: var(--navy-primary);
   -webkit-mask-image: url('assets/coral-silhouette.png');
   mask-image: url('assets/coral-silhouette.png');
@@ -122,9 +122,9 @@ body {
 
 .brand-text {
   font-family: var(--font-brand);
-  font-size: 0.68rem;
+  font-size: 0.88rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--navy-primary);
   line-height: 1;
