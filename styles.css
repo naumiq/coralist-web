@@ -209,10 +209,24 @@ main {
 }
 
 .pill-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: var(--navy-primary);
+  box-shadow: 0 0 0 0 rgba(4, 44, 80, 0.45);
+  animation: pillPulse 2.4s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes pillPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(4, 44, 80, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(4, 44, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(4, 44, 80, 0);
+  }
 }
 
 .hero-heading {
@@ -274,7 +288,7 @@ main {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   margin-top: 6px;
   margin-bottom: 10px;
 }
@@ -282,18 +296,31 @@ main {
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 0.92rem;
+  gap: 14px;
+}
+
+.feature-item strong {
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 700;
   color: var(--navy-primary);
-  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.feature-sub {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .feature-bullet {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--navy-primary);
-  margin-top: 9px;
+  margin-top: 8px;
   flex-shrink: 0;
 }
 
@@ -366,6 +393,61 @@ main {
 .btn-secondary:hover {
   border-color: var(--navy-primary);
   background-color: var(--navy-subtle);
+}
+
+/* ==========================================================================
+   Platform Metrics & Credibility Grid
+   ========================================================================== */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0 auto 60px;
+  max-width: 100%;
+}
+
+.metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--navy-border-subtle);
+}
+
+.metric-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--navy-subtle);
+  border: 1px solid var(--navy-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.metric-card h4 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.metric-card p {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* Minimal Notice Box */
@@ -557,6 +639,10 @@ main {
   .btn-group {
     justify-content: center;
   }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
   .legal-card {
     padding: 36px 24px;
   }
@@ -568,6 +654,10 @@ main {
 @media (max-width: 640px) {
   .container {
     padding: 0 20px;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
   .nav-links {
     display: none;
