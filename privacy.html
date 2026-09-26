@@ -11,13 +11,26 @@
 </head>
 <body>
 
-  <!-- Site Header (Brand Logo & Name Only) -->
+  <!-- Site Header -->
   <header class="site-header">
-    <div class="container nav-row-center">
+    <div class="container nav-row">
+      <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
         <div class="brand-icon-mask"></div>
         <span class="brand-text">Coralist</span>
       </a>
+
+      <!-- Right: Navigation -->
+      <nav class="site-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
