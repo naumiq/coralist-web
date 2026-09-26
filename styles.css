@@ -944,20 +944,36 @@ main {
 
 /* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
-  /* Navigation Bar */
+  /* Navigation Bar: Centered Stacked Logo, Left Burger Menu */
   .site-header {
-    height: 64px;
+    height: 74px;
   }
 
   .nav-row {
-    height: 64px;
-    padding: 0;
+    position: relative;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .mobile-toggle-btn {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: flex;
+    z-index: 10;
   }
 
   .brand-link {
-    flex-direction: row;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 4px;
     padding: 0;
   }
 
@@ -967,12 +983,11 @@ main {
   }
 
   .brand-text {
-    font-size: 0.94rem;
-    letter-spacing: 0.16em;
-  }
-
-  .mobile-toggle-btn {
-    display: flex;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1;
   }
 
   .site-nav {
@@ -982,7 +997,7 @@ main {
   .nav-links {
     display: none;
     position: absolute;
-    top: 64px;
+    top: 74px;
     left: 0;
     right: 0;
     background: #ffffff;
@@ -1374,6 +1389,14 @@ main {
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
+  }
+
+  .nav-row {
+    padding: 0 16px;
+  }
+
+  .mobile-toggle-btn {
+    left: 16px;
   }
 
   .showcase-card {
