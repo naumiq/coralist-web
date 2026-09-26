@@ -122,8 +122,47 @@
           </div>
 
           <div class="showcase-mockup-col">
-            <div class="phone-mockup-frame">
-              <img src="assets/screenshots/dashboard.png" alt="Coralist Mobile Dashboard Preview">
+            <div class="gallery-container" aria-label="Coralist Mobile App Gallery">
+              
+              <!-- Nav Controls & Caption Header -->
+              <div class="gallery-header">
+                <span class="gallery-caption" id="gallery-caption">1 / 5 — Main Dashboard</span>
+                <div class="gallery-nav-btns">
+                  <button class="gallery-nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
+                  <button class="gallery-nav-btn next-btn" aria-label="Next screenshot">›</button>
+                </div>
+              </div>
+
+              <!-- Phone Frame with Slides -->
+              <div class="phone-mockup-frame gallery-frame">
+                <div class="gallery-slides">
+                  <div class="gallery-slide active">
+                    <img src="assets/screenshots/dashboard.png" alt="Coralist Mobile Dashboard Preview">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="assets/screenshots/logbook.png" alt="Coralist Digital Tank Logbook">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="assets/screenshots/analyses.png" alt="Coralist AI Water Test Analysis">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="assets/screenshots/tasks.png" alt="Coralist Maintenance Task Scheduler">
+                  </div>
+                  <div class="gallery-slide">
+                    <img src="assets/screenshots/chat.png" alt="Coralist AI Personal Assistant">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Dots / Tabs -->
+              <div class="gallery-indicators">
+                <button class="indicator-dot active" data-index="0">Dashboard</button>
+                <button class="indicator-dot" data-index="1">Logbook</button>
+                <button class="indicator-dot" data-index="2">AI Analysis</button>
+                <button class="indicator-dot" data-index="3">Tasks</button>
+                <button class="indicator-dot" data-index="4">Assistant</button>
+              </div>
+
             </div>
           </div>
         </div>
