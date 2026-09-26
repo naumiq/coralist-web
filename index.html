@@ -9,7 +9,7 @@
     content="Coralist is a smart digital logbook and water chemistry companion for reef aquarists. Track parameters, monitor stability trends, and get context-aware AI insights for your tank.">
 
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.2">
 </head>
 
 <body>
@@ -33,7 +33,11 @@
         </ul>
       </nav>
 
-      <button class="mobile-toggle-btn" aria-label="Toggle navigation">☰</button>
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
   <!-- Main Content -->
@@ -171,9 +175,11 @@
         <!-- Row 1: The Daily Foundations (Logbook & Dashboard) -->
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-card-icon">📖</div>
-            <h3>Digital Logbook</h3>
-            <div class="feature-tagline">No more water-stained notebooks or disconnected spreadsheets</div>
+            <div class="feature-card-header">
+              <div class="feature-card-icon">📖</div>
+              <h3>Digital Logbook</h3>
+            </div>
+            <div class="feature-tagline">No more water-stained notebooks or lost spreadsheets</div>
             <p>
               Testing saltwater with a paper notebook nearby usually ends with wet, stained pages and lost
               records. Spreadsheets store numbers, but they won't help you learn from them or alert you when an
@@ -186,8 +192,10 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card-icon">🎛️</div>
-            <h3>Configurable Dashboard</h3>
+            <div class="feature-card-header">
+              <div class="feature-card-icon">🎛️</div>
+              <h3>Configurable Dashboard</h3>
+            </div>
             <div class="feature-tagline">Your tank's vital parameters and target ranges, at a glance</div>
             <p>
               Every system has different requirements — a mixed tank, LPS, or nano runs differently than a
@@ -203,8 +211,10 @@
         <!-- Row 2: Stability & Intelligence (Stability, AI Analysis, Assistant) -->
         <div class="features-grid-trio">
           <div class="feature-card">
-            <div class="feature-card-icon">📈</div>
-            <h3>Stability Index Chart</h3>
+            <div class="feature-card-header">
+              <div class="feature-card-icon">📈</div>
+              <h3>Stability Index Chart</h3>
+            </div>
             <div class="feature-tagline">Because in reef tanks, stability is king</div>
             <p>
               Corals rarely suffer from a single parameter reading; they suffer from sudden swings. The Stability Index
@@ -216,8 +226,10 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card-icon">🧪</div>
-            <h3>AI Water Test Analysis</h3>
+            <div class="feature-card-header">
+              <div class="feature-card-icon">🧪</div>
+              <h3>AI Water Test Analysis</h3>
+            </div>
             <div class="feature-tagline">Practical guidance on what your test numbers mean</div>
             <p>
               Instead of wondering how a set of test results interacts, Coralist evaluates your numbers together, not
@@ -228,8 +240,10 @@
           </div>
 
           <div class="feature-card">
-            <div class="feature-card-icon">💬</div>
-            <h3>Context-Aware Assistant</h3>
+            <div class="feature-card-header">
+              <div class="feature-card-icon">💬</div>
+              <h3>Context-Aware Assistant</h3>
+            </div>
             <div class="feature-tagline">An assistant that already knows your tank and livestock</div>
             <p>
               Ask questions without re-explaining your setup every time. The assistant already knows your tank volume,
@@ -274,7 +288,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2.1"></script>
 </body>
 
 </html>

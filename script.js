@@ -7,18 +7,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.mobile-toggle-btn');
   const navLinks = document.querySelector('.nav-links');
 
+  function closeMobileNav() {
+    if (navLinks && navLinks.classList.contains('mobile-open')) {
+      navLinks.classList.remove('mobile-open');
+      if (toggleBtn) {
+        toggleBtn.classList.remove('is-active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+
   if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
-      const isOpen = navLinks.classList.contains('mobile-open');
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      toggleBtn.classList.toggle('is-active', isOpen);
       toggleBtn.setAttribute('aria-expanded', isOpen);
     });
 
     // Close mobile nav when clicking any link
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('mobile-open');
+        closeMobileNav();
       });
+    });
+
+    // Close mobile nav when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeMobileNav();
+      }
+    });
+
+    // Close mobile nav on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileNav();
+      }
     });
   }
 
