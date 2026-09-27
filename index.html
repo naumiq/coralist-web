@@ -9,7 +9,7 @@
     content="Coralist is a smart digital logbook and water chemistry companion for reef aquarists. Track parameters, monitor stability trends, and get context-aware AI insights for your tank.">
 
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
-  <link rel="stylesheet" href="styles.css?v=2.3">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 
 <body>
@@ -57,16 +57,15 @@
             </p>
 
             <ul class="feature-list">
-              <li class="feature-item">
+              <li class="feature-item" data-slide="0" data-highlight="stability">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Digital Logbook</strong>
-                  <span class="feature-sub">Log tests, dosing, hardware, and livestock without water-damaged
-                    paperwork or
-                    spreadsheets.</span>
+                  <strong>Stability Index Chart</strong>
+                  <span class="feature-sub">Stability is king. Watch long-term trends and focus on flattening the
+                    curve.</span>
                 </div>
               </li>
-              <li class="feature-item">
+              <li class="feature-item" data-slide="0" data-highlight="dials">
                 <span class="feature-bullet"></span>
                 <div>
                   <strong>Configurable Dashboard</strong>
@@ -75,15 +74,19 @@
                     status.</span>
                 </div>
               </li>
-              <li class="feature-item">
+
+              <li class="feature-item" data-slide="1">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Stability Index Trend Chart</strong>
-                  <span class="feature-sub">Stability is king. Watch long-term trends and focus on flattening the
-                    curve.</span>
+                  <strong>Digital Logbook</strong>
+                  <span class="feature-sub">Log tests, dosing, hardware, and livestock without water-damaged
+                    paperwork or
+                    spreadsheets.</span>
                 </div>
               </li>
-              <li class="feature-item">
+
+
+              <li class="feature-item" data-slide="2">
                 <span class="feature-bullet"></span>
                 <div>
                   <strong>AI Water Test Analysis</strong>
@@ -91,7 +94,7 @@
                     results.</span>
                 </div>
               </li>
-              <li class="feature-item">
+              <li class="feature-item" data-slide="3">
                 <span class="feature-bullet"></span>
                 <div>
                   <strong>Smart Task Lists</strong>
@@ -99,7 +102,7 @@
                     reefs thriving — the AI assistant can generate a program tailored to your setup.</span>
                 </div>
               </li>
-              <li class="feature-item">
+              <li class="feature-item" data-slide="4">
                 <span class="feature-bullet"></span>
                 <div>
                   <strong>Context-Aware Personal Assistant</strong>
@@ -130,6 +133,8 @@
                 <div class="gallery-slides">
                   <div class="gallery-slide active">
                     <img src="assets/screenshots/dashboard.png" alt="Coralist Mobile Dashboard Preview">
+                    <div class="highlight-frame" id="stability-highlight-frame" aria-hidden="true"></div>
+                    <div class="highlight-frame" id="dials-highlight-frame" aria-hidden="true"></div>
                   </div>
                   <div class="gallery-slide">
                     <img src="assets/screenshots/logbook.png" alt="Coralist Digital Tank Logbook">
@@ -288,7 +293,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.1"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 
 </html>

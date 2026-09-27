@@ -69,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = galleryContainer.querySelector('.prev-btn');
     const nextBtn = galleryContainer.querySelector('.next-btn');
     const captionEl = document.getElementById('gallery-caption');
+    const stabilityFrame = document.getElementById('stability-highlight-frame');
+    const dialsFrame = document.getElementById('dials-highlight-frame');
+
+    function hideHighlights() {
+      if (stabilityFrame) stabilityFrame.classList.remove('visible');
+      if (dialsFrame) dialsFrame.classList.remove('visible');
+    }
 
     const slideData = [
       { title: 'Main Dashboard', sub: '1 / 5' },
@@ -81,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function goToSlide(index, direction = 'next') {
+      hideHighlights();
       if (index === currentIndex) return;
       
       const oldIndex = currentIndex;
@@ -147,15 +155,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Connect feature bullet items to gallery slides
     const featureItems = document.querySelectorAll('.feature-list .feature-item');
-    const featureMapping = [1, 0, 0, 2, 4]; // Logbook (1), Dials (0), Stability (0), Analysis (2), Assistant (4)
+    // Stability (0), Dashboard (0), Logbook (1), Analysis (2), Tasks (3), Assistant (4)
+    const featureMapping = [0, 0, 1, 2, 3, 4];
     featureItems.forEach((item, index) => {
       item.style.cursor = 'pointer';
       item.title = 'Click to view screenshot';
       item.addEventListener('click', () => {
-        const targetSlide = featureMapping[index];
-        if (targetSlide !== undefined) {
+        const targetSlide = item.dataset.slide !== undefined
+          ? parseInt(item.dataset.slide, 10)
+          : featureMapping[index];
+        const highlight = item.dataset.highlight;
+
+        if (targetSlide !== undefined && !isNaN(targetSlide)) {
           const dir = targetSlide >= currentIndex ? 'next' : 'prev';
           goToSlide(targetSlide, dir);
+
+          if (highlight === 'stability' && stabilityFrame) {
+            hideHighlights();
+            void stabilityFrame.offsetWidth;
+            stabilityFrame.classList.add('visible');
+          } else if (highlight === 'dials' && dialsFrame) {
+            hideHighlights();
+            void dialsFrame.offsetWidth;
+            dialsFrame.classList.add('visible');
+          } else {
+            hideHighlights();
+          }
+
           galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       });
