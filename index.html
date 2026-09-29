@@ -9,7 +9,7 @@
     content="Coralist is a smart digital logbook and water chemistry companion for reef aquarists. Track parameters, monitor stability trends, and get context-aware AI insights for your tank.">
 
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
-  <link rel="stylesheet" href="styles.css?v=2.5">
+  <link rel="stylesheet" href="styles.css?v=3.1">
 </head>
 
 <body>
@@ -47,8 +47,11 @@
       <section class="hero-section">
         <!-- Product Preview Card -->
         <div class="showcase-card">
+          <div class="showcase-header">
+            <h1>Your Personal Reef Tank Expert</h1>
+          </div>
+
           <div class="showcase-text-col">
-            <h3>Your Personal Reef Tank Expert</h3>
             <p>
               Built by a hobbyist to simplify the everyday tasks of testing, logging, and keeping water
               parameters steady. Coralist connects your test results, dosing routines, hardware setup, and livestock
@@ -151,13 +154,13 @@
                 </div>
               </div>
 
-              <!-- Interactive Dots / Tabs -->
-              <div class="gallery-indicators">
-                <button class="indicator-dot active" data-index="0">Dashboard</button>
-                <button class="indicator-dot" data-index="1">Logbook</button>
-                <button class="indicator-dot" data-index="2">AI Analysis</button>
-                <button class="indicator-dot" data-index="3">Tasks</button>
-                <button class="indicator-dot" data-index="4">Assistant</button>
+              <!-- Interactive Dots / Tabs below app screenshots -->
+              <div class="gallery-indicators" role="tablist" aria-label="App preview screens">
+                <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Dashboard</button>
+                <button class="indicator-dot" data-index="1" role="tab" aria-selected="false">Logbook</button>
+                <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analysis</button>
+                <button class="indicator-dot" data-index="3" role="tab" aria-selected="false">Tasks</button>
+                <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">Assistant</button>
               </div>
 
             </div>
@@ -293,7 +296,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.4"></script>
+  <script src="script.js?v=2.7"></script>
 </body>
 
 </html>

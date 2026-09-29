@@ -104,7 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
+        const isActive = i === currentIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
       if (captionEl) {
