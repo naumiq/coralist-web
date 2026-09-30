@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coralist — AI-Powered Reef Tank Logbook & Water Chemistry Tracker</title>
   <meta name="description"
-    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log tests, and get AI guidance tailored to your corals.">
+    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log saltwater tests, and get AI guidance tailored to your corals.">
+  <meta name="keywords"
+    content="reef tank logbook, saltwater aquarium tracker, marine aquarium water testing, sea aquarium parameters, coral care app, alkalinity stability">
   <link rel="canonical" href="https://coralist.app/">
 
   <!-- Open Graph / Facebook / Discord / Forums -->
@@ -14,7 +16,7 @@
   <meta property="og:url" content="https://coralist.app/">
   <meta property="og:title" content="Coralist — AI-Powered Reef Tank Logbook & Water Chemistry Tracker">
   <meta property="og:description"
-    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log tests, and get AI guidance tailored to your corals.">
+    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log saltwater tests, and get AI guidance tailored to your corals.">
   <meta property="og:image" content="https://coralist.app/assets/screenshots/dashboard.png">
   <meta property="og:site_name" content="Coralist">
 
@@ -23,7 +25,7 @@
   <meta name="twitter:url" content="https://coralist.app/">
   <meta name="twitter:title" content="Coralist — AI-Powered Reef Tank Logbook & Water Chemistry Tracker">
   <meta name="twitter:description"
-    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log tests, and get AI guidance tailored to your corals.">
+    content="Coralist is the smart reef tank logbook and water chemistry tracker. Monitor parameter stability, log saltwater tests, and get AI guidance tailored to your corals.">
   <meta name="twitter:image" content="https://coralist.app/assets/screenshots/dashboard.png">
 
   <!-- Mobile Browser Theme Color -->
@@ -44,7 +46,7 @@
         "name": "Coralist",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "iOS, Android",
-        "description": "Smart digital logbook and water chemistry companion for reef aquarists. Track alkalinity, calcium, nitrate, phosphate, and stability trends with context-aware AI analysis.",
+        "description": "Smart digital logbook and water chemistry companion for reef tank, marine aquarium, and sea aquarium keepers. Track alkalinity, calcium, nitrate, phosphate, and stability trends with context-aware AI analysis.",
         "url": "https://coralist.app/",
         "image": "https://coralist.app/assets/screenshots/dashboard.png",
         "screenshot": "https://coralist.app/assets/screenshots/dashboard.png",
@@ -79,6 +81,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Coralist supports logging and tracking all essential saltwater and reef aquarium parameters: Alkalinity (dKH), Calcium (Ca), Magnesium (Mg), Nitrate (NO₃), Phosphate (PO₄), Salinity (34–36 ppt / SG), Potassium (K), Boron (B), Iodine (I), Silicon (Si), Ammonia, Nitrite, pH, and Temperature. You can configure custom target ranges or use presets tailored for SPS-dominant, LPS, or mixed reefs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I manage multiple tanks like a frag tank or quarantine tank?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Coralist supports full multi-tank management. You can create separate, dedicated profiles for your main display tank, frag tank, and quarantine tank (QT). Each tank maintains its own independent water chemistry history, custom target parameter ranges, livestock logs, equipment inventory, and AI analysis."
             }
           },
           {
@@ -162,10 +172,10 @@
 
           <div class="showcase-text-col">
             <p>
-              Built by a hobbyist to simplify the testing, logging, and keeping water
+              Built by a hobbyist to simplify testing, logging, and keeping water
               parameters steady. Coralist connects your test results, dosing routines, hardware setup, and livestock
-              in one clear view. All of this feeds into a marine-expert AI agent that identifies patterns,
-              spots emerging problems, and proposes practical advice and maintenance tasks tailored to your tank.
+              in one clear view for your saltwater aquarium. All of this feeds into an AI companion that identifies
+              patterns, spots emerging problems, and proposes practical advice tailored to your system.
             </p>
 
             <ul class="feature-list">
@@ -191,9 +201,8 @@
                 <span class="feature-bullet"></span>
                 <div>
                   <strong>Digital Logbook</strong>
-                  <span class="feature-sub">Log tests, dosing, hardware, and livestock without water-damaged
-                    paperwork or
-                    spreadsheets.</span>
+                  <span class="feature-sub">Log tests, dosing, hardware, and livestock across your main aquarium, frag
+                    tank, and quarantine tank.</span>
                 </div>
               </li>
 
@@ -306,14 +315,14 @@
               <div class="feature-card-icon">📖</div>
               <h3>Digital Logbook</h3>
             </div>
-            <div class="feature-tagline">No more water-stained notebooks or lost spreadsheets</div>
+            <div class="feature-tagline">Track your main display, frag tank, and quarantine setup</div>
             <p>
-              Testing saltwater with a paper notebook nearby usually ends with wet, stained pages and lost
+              Testing a saltwater tank with a paper notebook nearby usually ends with wet, stained pages and lost
               records. Spreadsheets store numbers, but they won't help you learn from them or alert you when an
               alkalinity drop lines up with coral stress. Coralist keeps your water tests, livestock additions,
-              hardware setup, and equipment maintenance together—so you can easily connect the dots and understand
-              how changes impact your corals and fish. Your tank details are fed directly into the AI engine for
-              analysis and advice, making every recommendation specific to your system.
+              hardware setup, and equipment maintenance together—with full support for multiple tanks. Effortlessly
+              switch between your main display tank, dedicated frag tank, and quarantine setup with isolated
+              chemistry histories, livestock profiles, and custom targets for each system.
             </p>
           </div>
 
@@ -344,7 +353,7 @@
             <div class="feature-tagline">Tailored maintenance routines and tank cycling schedules</div>
             <p>
               Never miss a water change, filter fleece replacement, or test schedule again. From guided cycling programs
-              for brand new tanks to recurring maintenance routines that keep mature SPS and LPS reefs thriving, the AI
+              for brand new setups to recurring maintenance routines that keep a mature marine aquarium thriving, the AI
               assistant generates checklists tailored to your setup, equipment, and livestock demands.
             </p>
           </div>
@@ -360,7 +369,8 @@
               Corals rarely suffer from a single parameter reading; they suffer from sudden swings. The Stability Index
               tracks your long-term trends across 1-, 3-, 6-, and 12-month windows and adjusts its scoring
               based on your livestock type—because what counts as "stable" for an SPS tank is different from a
-              fish-only setup. By highlighting creeping deviations early, it helps you focus on what really matters in
+              fish-only marine tank. By highlighting creeping deviations early, it helps you focus on what really
+              matters in
               reef keeping: flattening the curve and keeping your water chemistry steady.
             </p>
           </div>
@@ -388,10 +398,10 @@
             </div>
             <div class="feature-tagline">An assistant that already knows your tank and livestock</div>
             <p>
-              Ask questions without re-explaining your setup every time. The assistant already knows your tank volume,
-              parameters, equipment, and livestock—so you can use it to build or adjust a dosing program, plan
-              maintenance tasks, or check at your local fish store whether a new fish or coral is
-              compatible with what you already have.
+              Ask questions without re-explaining your setup every time. Whether you maintain a delicate sea aquarium,
+              a nano reef, or a high-demand SPS system, the assistant already knows your tank volume, parameters,
+              equipment, and livestock—so you can use it to build or adjust a dosing program, plan maintenance tasks,
+              or check at your local fish store whether a new fish or coral is compatible with what you already have.
             </p>
           </div>
         </div>
@@ -407,14 +417,15 @@
         </div>
 
         <div class="faq-list">
-          <details class="faq-item" open>
+          <details class="faq-item">
             <summary class="faq-question">
               <span>What water parameters can I log and track in Coralist?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
               <p>
-                Coralist provides full tracking and logging for all essential saltwater and reef aquarium parameters, featuring custom target ranges, alert boundaries, and color-coded status dials:
+                Coralist provides full tracking and logging for all essential saltwater and reef aquarium parameters,
+                featuring custom target ranges, alert boundaries, and color-coded status dials:
               </p>
               <div class="param-group-grid">
                 <div class="param-category">
@@ -423,7 +434,8 @@
                     <li><strong>Alkalinity (dKH):</strong> Carbonate buffer (7–11 dKH) for coral calcification.</li>
                     <li><strong>Calcium (Ca):</strong> Dissolved calcium (400–450 mg/L) for skeletal growth.</li>
                     <li><strong>Magnesium (Mg):</strong> Ionic balance (1250–1450 mg/L) preventing precipitation.</li>
-                    <li><strong>Potassium (K):</strong> Essential macro element (380–420 mg/L) for coral coloration and cellular function.</li>
+                    <li><strong>Potassium (K):</strong> Essential macro element (380–420 mg/L) for coral coloration and
+                      cellular function.</li>
                     <li><strong>Boron (B):</strong> pH buffering and skeletal formation (4–5 mg/L).</li>
                   </ul>
                 </div>
@@ -439,15 +451,44 @@
                 <div class="param-category">
                   <h4>Trace Elements & Water Quality</h4>
                   <ul>
-                    <li><strong>Iodine (I):</strong> Trace element (0.055–0.07 mg/L) for soft corals and invertebrate health.</li>
+                    <li><strong>Iodine (I):</strong> Trace element (0.055–0.07 mg/L) for soft corals and invertebrate
+                      health.</li>
                     <li><strong>Silicon (Si):</strong> Dissolved silicate (0–0.2 mg/L) to monitor diatom control.</li>
-                    <li><strong>Salinity:</strong> Measured in practical salinity (34–36 ppt) or Specific Gravity (SG).</li>
-                    <li><strong>pH & Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C / °F).</li>
+                    <li><strong>Salinity:</strong> Measured in practical salinity (34–36 ppt) or Specific Gravity (SG).
+                    </li>
+                    <li><strong>pH & Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C /
+                      °F).</li>
                   </ul>
                 </div>
               </div>
               <p>
-                Every parameter comes with customizable target ranges or pre-configured presets tailored for SPS-dominant reefs, LPS aquariums, soft corals, or mixed systems.
+                Every parameter comes with customizable target ranges or pre-configured presets tailored for
+                SPS-dominant reefs, LPS aquariums, soft corals, or mixed systems.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I manage multiple tanks like a frag tank or quarantine tank?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Yes. Coralist is engineered with full multi-tank support so you can manage your entire setup in one app:
+              </p>
+              <ul>
+                <li><strong>Main Display Tank:</strong> Track long-term stability, coral calcification rates, dosing
+                  routines, and livestock compatibility in your showpiece aquarium.</li>
+                <li><strong>Frag Tank:</strong> Keep separate logs for coral propagation, accelerated growth parameters,
+                  high-intensity lighting cycles, and frag inventories.</li>
+                <li><strong>Quarantine Tank (QT):</strong> Monitor new fish and coral arrivals, track prophylactic
+                  treatments and medications, and record observation periods completely isolated from your display
+                  system.</li>
+              </ul>
+              <p>
+                Each tank has its own independent water chemistry history, custom target ranges, livestock logs,
+                equipment profiles, and AI-driven maintenance tasks.
               </p>
             </div>
           </details>
