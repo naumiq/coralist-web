@@ -74,7 +74,7 @@
       <section class="legal-header">
         <h1>Privacy Policy</h1>
         <p>
-          <strong>Last Updated:</strong> 26 September 2026
+          <strong>Last Updated:</strong> 12 October 2026
         </p>
       </section>
 
@@ -116,7 +116,7 @@
             <tbody>
               <tr>
                 <td><strong>Account Information</strong></td>
-                <td>Email address, full name, avatar (via Supabase Auth); OAuth tokens from Google or Apple Sign-In</td>
+                <td>Email address, full name, and avatar when registering a Coralist account; OAuth tokens from Google or Apple Sign-In; securely hashed credentials for email accounts</td>
                 <td><strong>(b) Contractual necessity</strong> — required to create and operate your account</td>
               </tr>
               <tr>
@@ -163,7 +163,7 @@
               similar).</em></p>
 
           <p>
-            <strong>Local-Only Guest Mode:</strong> If you use the App without creating an account or logging in, the App operates entirely in local-only mode. All telemetry, parameters, and logs remain stored strictly on your local device storage. Anonymous or guest users do not have access to backend cloud synchronization, profile creation, or AI features, and no database records or profiles are created on our servers.
+            <strong>Local-Only Guest Mode:</strong> If you use the App without creating an account or logging in, the App operates entirely in local-only mode. All telemetry, parameters, and logs remain stored strictly on your local device storage. The App does not create anonymous accounts, anonymous sessions, or temporary backend guest records. Guest users do not have access to backend cloud synchronization, profile creation, or AI features, and no database records or user profiles are created on our servers.
           </p>
 
           <h2>2. How We Use Your Information</h2>
@@ -218,8 +218,8 @@
             <tbody>
               <tr>
                 <td><strong>Supabase Inc.</strong></td>
-                <td>Authentication, database, edge functions</td>
-                <td>Account data, aquarium telemetry, usage logs</td>
+                <td>Cloud database hosting &amp; backend infrastructure</td>
+                <td>Account records, synchronized aquarium telemetry, usage logs</td>
                 <td>EU (Ireland, AWS <code>eu-west-1</code>)</td>
                 <td>Adequacy / SCCs as applicable</td>
               </tr>
@@ -247,8 +247,7 @@
           <p>We share your information only with trusted third parties essential for operating the App. See the
             Sub-Processors table in Section 3 for a full list. Key details:</p>
           <ul>
-            <li><strong>Supabase:</strong> Acts as our backend database and authentication provider. They securely store
-              your account details, passwords (hashed), and aquarium telemetry.</li>
+            <li><strong>Supabase:</strong> Provides managed cloud database infrastructure and backend services hosted in the European Union (Ireland). They securely store registered user account records, encrypted/hashed credentials, and synchronized aquarium telemetry. Users authenticate directly to the Coralist service; we do not expose direct database access to end users.</li>
             <li><strong>RevenueCat:</strong> Manages our in-app purchases and subscriptions. When you make a purchase,
               RevenueCat receives anonymous app user IDs to validate subscription status. Payment processing is handled
               entirely by Apple or Google; we do not collect or store credit card information.</li>
@@ -285,7 +284,7 @@
               and selecting "Restore Account."</li>
             <li><strong>After 30 days:</strong> An automated nightly process permanently and irreversibly deletes your
               account and all associated data (aquarium records, logs, livestock, equipment, AI interaction history)
-              from all active databases, including the Supabase Auth record.</li>
+              from all active databases, including the Coralist user authentication record.</li>
           </ul>
 
           <div class="legal-callout">
