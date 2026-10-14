@@ -40,7 +40,7 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/logo-premium-clean.png">
-  <link rel="stylesheet" href="styles.css?v=3.9">
+  <link rel="stylesheet" href="styles.css?v=6.5">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -54,8 +54,8 @@
         "operatingSystem": "iOS, Android",
         "description": "Smart digital logbook and water chemistry companion for reef tank, marine aquarium, and sea aquarium keepers. Track alkalinity, calcium, nitrate, phosphate, and stability trends with context-aware AI analysis.",
         "url": "https://coralist.app/",
-        "image": "https://coralist.app/assets/screenshots/dashboard.png",
-        "screenshot": "https://coralist.app/assets/screenshots/dashboard.png",
+        "image": "https://coralist.app/assets/screenshots/feature-dashboard.jpg",
+        "screenshot": "https://coralist.app/assets/screenshots/feature-dashboard.jpg",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -83,6 +83,22 @@
         "mainEntity": [
           {
             "@type": "Question",
+            "name": "Which platforms will Coralist be available on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coralist is built natively for both iOS (iPhone) and Android mobile devices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to create an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only if you want to use cloud backup of your data and AI expert analyses. You can log parameters and use core features locally without an account, but creating an account is required if you want secure cloud backup across your devices and access to AI expert analyses."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "What water parameters can I log and track in Coralist?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -99,22 +115,6 @@
           },
           {
             "@type": "Question",
-            "name": "How does the AI Water Test Analysis work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Instead of evaluating each test result in isolation, Coralist's AI analyzes your parameters collectively. It takes into account historical trends, tank volume, coral sensitivity, and dosing routines to provide practical guidance on adjustments—or advise when it is best to leave things alone."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does AI task generation work in Coralist?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Coralist's AI assistant creates personalized maintenance routines based directly on your tank's specifications—including water volume, maturity, equipment setup, livestock, and testing history. Whether you need a step-by-step cycling protocol for a brand-new system, a recovery routine after parameter swings, or recurring maintenance for skimmer cleaning, dosing refills, and media swaps, the AI drafts an actionable schedule that you can customize, set reminders for, and track with a single tap."
-            }
-          },
-          {
-            "@type": "Question",
             "name": "How does Coralist help prevent coral stress and parameter swings?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -123,10 +123,26 @@
           },
           {
             "@type": "Question",
-            "name": "Which platforms will Coralist be available on?",
+            "name": "How does the AI Water Test Analysis work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Coralist is built natively for both iOS (iPhone) and Android mobile devices."
+              "text": "Instead of evaluating each test result in isolation, Coralist's AI analyzes your parameters collectively. It takes into account historical trends, tank volume, coral sensitivity, and dosing routines to provide practical guidance on adjustments—or advise when it is best to leave things alone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I use the app for analyses of water tests?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Using Coralist for water test analyses is simple: 1. Click the '+' button in the bottom navigation to add a new record. 2. Select 'Water test' from the category dropdown menu. 3. Enter your measured parameters or upload ICP PDF results, and submit. 4. The app calls the specialized AI Agent to analyze your current parameters against your historical trends, tank configuration, and livestock demands. 5. The AI Agent generates a comprehensive report with biological impact diagnostics and actionable dosing advice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AI task generation work in Coralist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Coralist's AI assistant creates personalized maintenance routines based directly on your tank's specifications—including water volume, maturity, equipment setup, livestock, and testing history. Whether you need a step-by-step cycling protocol for a brand-new system, a recovery routine after parameter swings, or recurring maintenance for skimmer cleaning, dosing refills, and media swaps, the AI drafts an actionable schedule that you can customize, set reminders for, and track with a single tap."
             }
           }
         ]
@@ -185,56 +201,43 @@
             </p>
 
             <ul class="feature-list">
-              <li class="feature-item" data-slide="0" data-highlight="stability">
+              <li class="feature-item is-active" data-slide="0">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Stability Index Chart</strong>
-                  <span class="feature-sub">Stability is king. Watch long-term trends and focus on flattening the
-                    curve.</span>
-                </div>
-              </li>
-              <li class="feature-item" data-slide="0" data-highlight="dials">
-                <span class="feature-bullet"></span>
-                <div>
-                  <strong>Configurable Dashboard</strong>
-                  <span class="feature-sub">Track the parameters you care about with custom target ranges and
-                    color-coded
-                    status.</span>
+                  <strong>Master Your Reef Tank</strong>
+                  <span class="feature-sub">Log &amp; monitor parameters with ease. Track stability trends and keep water chemistry steady.</span>
                 </div>
               </li>
 
               <li class="feature-item" data-slide="1">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Digital Logbook</strong>
-                  <span class="feature-sub">Log tests, dosing, hardware, and livestock across your main aquarium, frag
-                    tank, and quarantine tank.</span>
+                  <strong>Easy &amp; Quick Logbook</strong>
+                  <span class="feature-sub">Keep a detailed history of water tests, dosing routines, hardware, and livestock additions across your tanks.</span>
                 </div>
               </li>
-
 
               <li class="feature-item" data-slide="2">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>AI Water Test Analysis</strong>
-                  <span class="feature-sub">Understand your overall water state and get practical advice on your test
-                    results.</span>
+                  <strong>Smart AI Analyses &amp; Advice</strong>
+                  <span class="feature-sub">Optimize your tank with expert diagnostics, automated nutrient tracking, and targeted dosing adjustments.</span>
                 </div>
               </li>
+
               <li class="feature-item" data-slide="3">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Smart Task Lists</strong>
-                  <span class="feature-sub">From cycling programs for new tanks to maintenance routines that keep mature
-                    reefs thriving — the AI assistant can generate a program tailored to your setup.</span>
+                  <strong>Never Miss a Dose</strong>
+                  <span class="feature-sub">Automated task schedules and timely alerts tailored to your aquarium setup and maintenance demands.</span>
                 </div>
               </li>
+
               <li class="feature-item" data-slide="4">
                 <span class="feature-bullet"></span>
                 <div>
-                  <strong>Context-Aware Personal Assistant</strong>
-                  <span class="feature-sub">Ask for dosing guidance, maintenance schedules, or check whether a coral or
-                    fish is compatible before buying at your local store.</span>
+                  <strong>Your 24/7 Marine Expert</strong>
+                  <span class="feature-sub">Chat with specialized AI Agent anytime for dosing calculations, problem diagnoses, and coral compatibility.</span>
                 </div>
               </li>
             </ul>
@@ -252,37 +255,41 @@
           <div class="showcase-mockup-col">
             <div class="gallery-container" aria-label="Coralist Mobile App Gallery">
 
+
               <!-- Phone Frame with Slides and Overlay Arrows -->
-              <div class="phone-mockup-frame gallery-frame">
+              <div class="phone-mockup-frame gallery-frame" title="Click to view full size">
                 <button class="overlay-nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
                 <button class="overlay-nav-btn next-btn" aria-label="Next screenshot">›</button>
 
-                <div class="gallery-slides">
-                  <div class="gallery-slide active">
-                    <img src="assets/screenshots/dashboard.png"
-                      alt="Coralist Mobile Dashboard Preview - Water Chemistry & Parameters" width="270" height="585"
+                <div class="gallery-expand-hint" aria-hidden="true">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Click to expand</span>
+                </div>
+
+                <div class="gallery-slides" id="gallery-slides">
+                  <div class="gallery-slide active" data-slide-index="0">
+                    <img src="assets/screenshots/feature-dashboard.jpg"
+                      alt="Coralist Mobile App - Master Your Reef Tank, Log & Monitor Parameters with Ease" width="764" height="1024"
                       fetchpriority="high">
-                    <div class="highlight-frame" id="stability-highlight-frame" aria-hidden="true"></div>
-                    <div class="highlight-frame" id="dials-highlight-frame" aria-hidden="true"></div>
                   </div>
-                  <div class="gallery-slide">
-                    <img src="assets/screenshots/logbook.png"
-                      alt="Coralist Digital Tank Logbook - Water Tests & Dosing History" width="270" height="585"
+                  <div class="gallery-slide" data-slide-index="1">
+                    <img src="assets/screenshots/feature-logbook.jpg"
+                      alt="Coralist Digital Logbook - Easy & Quick Logbook, Keep a Detailed History of Your Tank" width="764" height="1024"
                       loading="lazy">
                   </div>
-                  <div class="gallery-slide">
-                    <img src="assets/screenshots/analyses.png"
-                      alt="Coralist AI Water Test Analysis - Saltwater Parameter Diagnosis" width="270" height="585"
+                  <div class="gallery-slide" data-slide-index="2">
+                    <img src="assets/screenshots/feature-analyses.jpg"
+                      alt="Coralist Smart AI Analyses & Advice - Optimize Your Tank with Expert Diagnostics" width="764" height="1024"
                       loading="lazy">
                   </div>
-                  <div class="gallery-slide">
-                    <img src="assets/screenshots/tasks.png"
-                      alt="Coralist Maintenance Task Scheduler - Reef Aquarium Care Routines" width="270" height="585"
+                  <div class="gallery-slide" data-slide-index="3">
+                    <img src="assets/screenshots/feature-tasks.jpg"
+                      alt="Coralist Task Scheduler - Never Miss a Dose, Automated Task Schedules & Alerts" width="764" height="1024"
                       loading="lazy">
                   </div>
-                  <div class="gallery-slide">
-                    <img src="assets/screenshots/chat.png"
-                      alt="Coralist AI Personal Assistant - Marine Aquarium Expert Companion" width="270" height="585"
+                  <div class="gallery-slide" data-slide-index="4">
+                    <img src="assets/screenshots/feature-assistant.jpg"
+                      alt="Coralist AI Assistant - Your 24/7 Marine Expert, Chat with Specialized AI Anytime" width="764" height="1024"
                       loading="lazy">
                   </div>
                 </div>
@@ -290,11 +297,11 @@
 
               <!-- Interactive Dots / Tabs below app screenshots -->
               <div class="gallery-indicators" role="tablist" aria-label="App preview screens">
-                <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Dashboard</button>
+                <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Parameters</button>
                 <button class="indicator-dot" data-index="1" role="tab" aria-selected="false">Logbook</button>
-                <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analysis</button>
+                <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analyses &amp; Advice</button>
                 <button class="indicator-dot" data-index="3" role="tab" aria-selected="false">Tasks</button>
-                <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">Assistant</button>
+                <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">AI Expert</button>
               </div>
 
             </div>
@@ -330,6 +337,12 @@
               switch between your main display tank, dedicated frag tank, and quarantine setup with isolated
               chemistry histories, livestock profiles, and custom targets for each system.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="1" aria-label="View Digital Logbook screenshot">
+                <span>View Logbook Screen</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
 
           <!-- 2. Configurable Dashboard -->
@@ -347,6 +360,12 @@
               see at a glance whether
               your water is in the sweet spot with intuitive, color-coded dials.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="0" aria-label="View Dashboard Parameters screenshot">
+                <span>View Dashboard Screen</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
 
           <!-- 3. Smart Task Lists -->
@@ -361,6 +380,12 @@
               for brand new setups to recurring maintenance routines that keep a mature marine aquarium thriving, the AI
               assistant generates checklists tailored to your setup, equipment, and livestock demands.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="3" aria-label="View Smart Task Lists screenshot">
+                <span>View Task Scheduler Screen</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
 
           <!-- 4. Stability Index Chart -->
@@ -378,21 +403,33 @@
               matters in
               reef keeping: flattening the curve and keeping your water chemistry steady.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="0" aria-label="View Stability Index Chart screenshot">
+                <span>View Stability Chart</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
 
-          <!-- 5. AI Water Test Analysis -->
+          <!-- 5. AI Analyses & Advice -->
           <div class="feature-card">
             <div class="feature-card-header">
               <div class="feature-card-icon">🧪</div>
-              <h3>AI Water Test Analysis</h3>
+              <h3>AI Analyses &amp; Advice</h3>
             </div>
-            <div class="feature-tagline">Practical guidance on what your test numbers mean</div>
+            <div class="feature-tagline">Optimize your tank with expert diagnostics</div>
             <p>
               Instead of wondering how a set of test results interacts, Coralist evaluates your numbers together, not
               in isolation. The app highlights your overall water state, explains potential impacts on your corals and
               invertebrates, and provides practical, grounded advice on what adjustments to make—or when it's best to
               leave things alone.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="2" aria-label="View AI Analyses and Advice screenshot">
+                <span>View Analyses &amp; Advice Screen</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
 
           <!-- 6. Context-Aware Assistant -->
@@ -408,6 +445,12 @@
               equipment, and livestock—so you can use it to build or adjust a dosing program, plan maintenance tasks,
               or check at your local fish store whether a new fish or coral is compatible with what you already have.
             </p>
+            <div class="feature-card-action">
+              <button class="feature-preview-btn" data-open-screenshot="4" aria-label="View Context-Aware Assistant screenshot">
+                <span>View AI Assistant Screen</span>
+                <span class="preview-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -424,6 +467,34 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary class="faq-question">
+              <span>Which platforms will Coralist be available on?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Coralist is built natively for both iOS (iPhone) and Android mobile devices. We are currently conducting
+                our closed beta testing phase.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Do I have to create an account?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Only if you want to use cloud backup of your data and AI expert analyses.
+              </p>
+              <p>
+                You can use Coralist locally to log water parameters, track maintenance tasks, and view stability charts without an account. Creating an account is only required if you want secure cloud backup across your devices and access to AI expert analyses and recommendations.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>What water parameters can I log and track in Coralist?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </summary>
@@ -434,7 +505,7 @@
               </p>
               <div class="param-group-grid">
                 <div class="param-category">
-                  <h4>Major Elements & Foundation</h4>
+                  <h4>Major Elements &amp; Foundation</h4>
                   <ul>
                     <li><strong>Alkalinity (dKH):</strong> Carbonate buffer (7–11 dKH) for coral calcification.</li>
                     <li><strong>Calcium (Ca):</strong> Dissolved calcium (400–450 mg/L) for skeletal growth.</li>
@@ -445,7 +516,7 @@
                   </ul>
                 </div>
                 <div class="param-category">
-                  <h4>Nutrients & Cycling</h4>
+                  <h4>Nutrients &amp; Cycling</h4>
                   <ul>
                     <li><strong>Nitrate (NO₃):</strong> Nutrient management (2–15 mg/L) for zooxanthellae health.</li>
                     <li><strong>Phosphate (PO₄):</strong> Inorganic nutrient tracking (0.02–0.1 mg/L).</li>
@@ -454,14 +525,14 @@
                   </ul>
                 </div>
                 <div class="param-category">
-                  <h4>Trace Elements & Water Quality</h4>
+                  <h4>Trace Elements &amp; Water Quality</h4>
                   <ul>
                     <li><strong>Iodine (I):</strong> Trace element (0.055–0.07 mg/L) for soft corals and invertebrate
                       health.</li>
                     <li><strong>Silicon (Si):</strong> Dissolved silicate (0–0.2 mg/L) to monitor diatom control.</li>
                     <li><strong>Salinity:</strong> Measured in practical salinity (34–36 ppt) or Specific Gravity (SG).
                     </li>
-                    <li><strong>pH & Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C /
+                    <li><strong>pH &amp; Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C /
                       °F).</li>
                   </ul>
                 </div>
@@ -500,6 +571,20 @@
 
           <details class="faq-item">
             <summary class="faq-question">
+              <span>How does Coralist help prevent coral stress and parameter swings?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                In reef keeping, stability is king. Coralist’s Stability Index calculates long-term stability scores
+                across 1-, 3-, 6-, and 12-month windows. By flagging creeping trends and sudden swings early, the app
+                helps you make gradual corrections before visible coral stress, bleaching, or tissue necrosis occurs.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
               <span>How does the AI Water Test Analysis work?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </summary>
@@ -510,6 +595,80 @@
                 corals). It diagnoses whether an imbalance is emerging and recommends practical adjustments—or advises
                 when it is best to leave things alone to protect stability.
               </p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-water-test-guide">
+            <summary class="faq-question">
+              <span>How do I use the app for analyses of water tests?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Using Coralist to analyze your water tests is fast and seamless. Simply log your latest test results, and our specialized AI Agent will cross-examine your readings against historical stability trends, aquarium volume, hardware configuration, and livestock demands to generate detailed diagnostics and advice:
+              </p>
+
+              <div class="faq-workflow-steps">
+                <!-- Step 1 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge">Step 1</div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/step-1-add-record.jpg" alt="Step 1: Click on the plus button to add a new record" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Click the <strong>+</strong> Button</h4>
+                    <p>Tap the dark blue <strong>+</strong> button at the bottom of the navigation bar to create a new tank record.</p>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge">Step 2</div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/step-2-select-water-test.jpg" alt="Step 2: Select Water test from the category dropdown" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Select "Water test"</h4>
+                    <p>In the Add Record sheet, choose <strong>Water test</strong> from the category dropdown menu to open parameter inputs.</p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge">Step 3</div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/step-3-enter-parameters.jpg" alt="Step 3: Enter water parameters and tap Add" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Add Parameters &amp; Submit</h4>
+                    <p>Enter your test results (Alkalinity, Calcium, Magnesium, Nitrate, etc.) or upload ICP PDF results, then tap <strong>Add</strong>.</p>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge">Step 4</div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/step-4-ai-agent-analyzing.jpg" alt="Step 4: AI Agent analyzes parameters against tank history and livestock" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>AI Agent Analyzes Your Tank</h4>
+                    <p>The app calls the AI Agent to analyze your readings against your historical stability, tank equipment, and coral species.</p>
+                  </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge">Step 5</div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/step-5-ai-advice-report.jpg" alt="Step 5: Receive personalized analyses and dosing advice" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Receive Analyses &amp; Advice</h4>
+                    <p>Get a comprehensive diagnostic breakdown with biological impact warnings and actionable dosing recommendations.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </details>
 
@@ -526,33 +685,6 @@
                 you need a step-by-step cycling protocol for a brand-new system, a recovery routine after parameter
                 swings, or recurring maintenance for skimmer cleaning, dosing refills, and media swaps, the AI drafts an
                 actionable schedule that you can customize, set reminders for, and track with a single tap.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>How does Coralist help prevent coral stress and parameter swings?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-answer">
-              <p>
-                In reef keeping, stability is king. Coralist’s Stability Index calculates long-term stability scores
-                across 1-, 3-, 6-, and 12-month windows. By flagging creeping trends and sudden swings early, the app
-                helps you make gradual corrections before visible coral stress, bleaching, or tissue necrosis occurs.
-              </p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Which platforms will Coralist be available on?</span>
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </summary>
-            <div class="faq-answer">
-              <p>
-                Coralist is built natively for both iOS (iPhone) and Android mobile devices. We are currently conducting
-                our closed beta testing phase.
               </p>
             </div>
           </details>
@@ -615,7 +747,29 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.8"></script>
+  <!-- Lightbox Modal for Fullscreen Screenshot Zoom -->
+  <div class="screenshot-lightbox" id="screenshot-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot preview" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-top-bar">
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close preview" title="Close (Esc)">✕</button>
+      </div>
+      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" aria-label="Previous screenshot">‹</button>
+      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" aria-label="Next screenshot">›</button>
+      
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrapper" id="lightbox-img-wrapper">
+          <img class="lightbox-image" id="lightbox-image" src="assets/screenshots/feature-dashboard.jpg" alt="Enlarged screenshot preview">
+        </div>
+        <div class="lightbox-footer">
+          <div class="lightbox-caption" id="lightbox-caption">1 / 5 — Parameters &amp; Stability: Master Your Reef Tank</div>
+          <div class="lightbox-hint">Press Esc to close • Use ‹ › or arrow keys to browse</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=6.5"></script>
 </body>
 
 </html>

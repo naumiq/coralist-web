@@ -72,26 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = galleryContainer.querySelector('.prev-btn');
     const nextBtn = galleryContainer.querySelector('.next-btn');
     const captionEl = document.getElementById('gallery-caption');
-    const stabilityFrame = document.getElementById('stability-highlight-frame');
-    const dialsFrame = document.getElementById('dials-highlight-frame');
-
-    function hideHighlights() {
-      if (stabilityFrame) stabilityFrame.classList.remove('visible');
-      if (dialsFrame) dialsFrame.classList.remove('visible');
-    }
+    const featureItems = document.querySelectorAll('.feature-list .feature-item');
 
     const slideData = [
-      { title: 'Main Dashboard', sub: '1 / 5' },
+      { title: 'Parameters & Stability', sub: '1 / 5' },
       { title: 'Digital Tank Logbook', sub: '2 / 5' },
-      { title: 'AI Water Test Analysis', sub: '3 / 5' },
-      { title: 'Task Scheduler', sub: '4 / 5' },
-      { title: 'AI Marine Assistant', sub: '5 / 5' }
+      { title: 'Smart AI Analyses & Advice', sub: '3 / 5' },
+      { title: 'Smart Task Scheduler', sub: '4 / 5' },
+      { title: '24/7 AI Marine Expert', sub: '5 / 5' }
     ];
 
     let currentIndex = 0;
 
     function goToSlide(index, direction = 'next') {
-      hideHighlights();
       if (index === currentIndex) return;
       
       const oldIndex = currentIndex;
@@ -112,7 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
-      if (captionEl) {
+      // Synchronize feature items active state
+      featureItems.forEach((item) => {
+        const target = parseInt(item.dataset.slide, 10);
+        item.classList.toggle('is-active', target === currentIndex);
+      });
+
+      if (captionEl && slideData[currentIndex]) {
         captionEl.textContent = `${slideData[currentIndex].sub} — ${slideData[currentIndex].title}`;
       }
     }
@@ -159,37 +158,170 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Connect feature bullet items to gallery slides
-    const featureItems = document.querySelectorAll('.feature-list .feature-item');
-    // Stability (0), Dashboard (0), Logbook (1), Analysis (2), Tasks (3), Assistant (4)
-    const featureMapping = [0, 0, 1, 2, 3, 4];
     featureItems.forEach((item, index) => {
       item.style.cursor = 'pointer';
       item.title = 'Click to view screenshot';
       item.addEventListener('click', () => {
         const targetSlide = item.dataset.slide !== undefined
           ? parseInt(item.dataset.slide, 10)
-          : featureMapping[index];
-        const highlight = item.dataset.highlight;
+          : index;
 
-        if (targetSlide !== undefined && !isNaN(targetSlide)) {
+        if (!isNaN(targetSlide)) {
           const dir = targetSlide >= currentIndex ? 'next' : 'prev';
           goToSlide(targetSlide, dir);
-
-          if (highlight === 'stability' && stabilityFrame) {
-            hideHighlights();
-            void stabilityFrame.offsetWidth;
-            stabilityFrame.classList.add('visible');
-          } else if (highlight === 'dials' && dialsFrame) {
-            hideHighlights();
-            void dialsFrame.offsetWidth;
-            dialsFrame.classList.add('visible');
-          } else {
-            hideHighlights();
-          }
-
-          galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       });
+    });
+
+    // Fullscreen Screenshot Lightbox Controller
+    const lightbox = document.getElementById('screenshot-lightbox');
+    const lightboxImg = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+    const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+    const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
+    const lightboxNextBtn = document.getElementById('lightbox-next-btn');
+
+    const screenshotData = [
+      {
+        src: 'assets/screenshots/feature-dashboard.jpg',
+        alt: 'Coralist Parameters & Stability Dashboard Preview',
+        title: '1 / 5 — Parameters & Stability: Master Your Reef Tank'
+      },
+      {
+        src: 'assets/screenshots/feature-logbook.jpg',
+        alt: 'Coralist Digital Tank Logbook Preview',
+        title: '2 / 5 — Digital Tank Logbook: Easy & Quick Logbook'
+      },
+      {
+        src: 'assets/screenshots/feature-analyses.jpg',
+        alt: 'Coralist Smart AI Analyses & Advice Preview',
+        title: '3 / 5 — Smart AI Analyses & Advice: Expert Diagnostics'
+      },
+      {
+        src: 'assets/screenshots/feature-tasks.jpg',
+        alt: 'Coralist Smart Task Scheduler Preview',
+        title: '4 / 5 — Smart Task Scheduler: Never Miss a Dose'
+      },
+      {
+        src: 'assets/screenshots/feature-assistant.jpg',
+        alt: 'Coralist 24/7 AI Marine Expert Preview',
+        title: '5 / 5 — 24/7 AI Marine Expert: Specialized Reef Intelligence'
+      }
+    ];
+
+    function updateLightboxContent(index) {
+      if (!lightboxImg || !screenshotData[index]) return;
+      lightboxImg.src = screenshotData[index].src;
+      lightboxImg.alt = screenshotData[index].alt;
+      if (lightboxCaption) {
+        lightboxCaption.textContent = screenshotData[index].title;
+      }
+    }
+
+    function openLightbox(index) {
+      if (!lightbox) return;
+      const targetIdx = index !== undefined ? index : currentIndex;
+      updateLightboxContent(targetIdx);
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Clicking directly on gallery slide images opens enlarged view
+    slides.forEach((slide, idx) => {
+      slide.style.cursor = 'pointer';
+      slide.addEventListener('click', (e) => {
+        // Only trigger if click wasn't on overlay navigation buttons
+        if (!e.target.closest('.overlay-nav-btn')) {
+          openLightbox(idx);
+        }
+      });
+    });
+
+    if (lightboxCloseBtn) {
+      lightboxCloseBtn.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxBackdrop) {
+      lightboxBackdrop.addEventListener('click', closeLightbox);
+    }
+
+    if (lightboxPrevBtn) {
+      lightboxPrevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const prevIdx = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(prevIdx, 'prev');
+        updateLightboxContent(prevIdx);
+      });
+    }
+
+    if (lightboxNextBtn) {
+      lightboxNextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const nextIdx = (currentIndex + 1) % slides.length;
+        goToSlide(nextIdx, 'next');
+        updateLightboxContent(nextIdx);
+      });
+    }
+
+    // Keyboard navigation when Lightbox is active
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox || !lightbox.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        const prevIdx = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(prevIdx, 'prev');
+        updateLightboxContent(prevIdx);
+      } else if (e.key === 'ArrowRight') {
+        const nextIdx = (currentIndex + 1) % slides.length;
+        goToSlide(nextIdx, 'next');
+        updateLightboxContent(nextIdx);
+      }
+    });
+
+    // Support opening screenshot directly from any feature card link
+    document.querySelectorAll('[data-open-screenshot]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const slideIdx = parseInt(btn.dataset.openScreenshot, 10);
+        if (!isNaN(slideIdx)) {
+          goToSlide(slideIdx);
+          openLightbox(slideIdx);
+        }
+      });
+    });
+
+    // Support expanding FAQ step images into Lightbox
+    document.querySelectorAll('.workflow-step-card').forEach((card, index) => {
+      const img = card.querySelector('img');
+      const heading = card.querySelector('h4');
+      const title = heading ? heading.textContent : `Step ${index + 1}`;
+      if (img) {
+        img.title = 'Click to enlarge image';
+        img.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (lightbox && lightboxImg) {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            if (lightboxCaption) {
+              lightboxCaption.textContent = `Water Test Walkthrough — ${title}`;
+            }
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      }
     });
   }
 });
