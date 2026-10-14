@@ -482,39 +482,7 @@ main {
   z-index: 0;
 }
 
-/* Gallery Expand Hint badge */
-.gallery-expand-hint {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  z-index: 22;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: rgba(4, 44, 80, 0.86);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
-  font-family: var(--font-brand);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  box-shadow: 0 4px 16px rgba(4, 44, 80, 0.28);
-  pointer-events: none;
-  opacity: 0.88;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
 
-.phone-mockup-frame:hover .gallery-expand-hint {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  background: var(--navy-primary);
-  box-shadow: 0 6px 20px rgba(4, 44, 80, 0.42);
-}
 
 /* Phone Mockup Frame - Full 600px width, Edge-to-Edge Visuals */
 .phone-mockup-frame {
@@ -648,6 +616,10 @@ main {
   margin-top: 8px;
   z-index: 2;
   position: relative;
+}
+
+.indicators-row {
+  display: contents;
 }
 
 .indicator-dot {
@@ -1054,10 +1026,18 @@ main {
    ========================================================================== */
 .faq-workflow-steps {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
   margin-top: 18px;
   margin-bottom: 8px;
+}
+
+.faq-workflow-steps[data-walkthrough="water-test"] {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.faq-workflow-steps[data-walkthrough="setup"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .workflow-step-card {
@@ -1080,6 +1060,8 @@ main {
 .step-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   align-self: flex-start;
   padding: 3px 9px;
   border-radius: 9999px;
@@ -1109,13 +1091,8 @@ main {
   object-fit: cover;
   display: block;
   cursor: pointer;
-  transition: transform 0.3s ease;
   image-rendering: -webkit-optimize-contrast;
   transform: translateZ(0);
-}
-
-.workflow-step-card:hover .step-img-box img {
-  transform: scale(1.02);
 }
 
 .step-info {
@@ -1141,14 +1118,18 @@ main {
 }
 
 @media (max-width: 992px) {
-  .faq-workflow-steps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .faq-workflow-steps,
+  .faq-workflow-steps[data-walkthrough="water-test"],
+  .faq-workflow-steps[data-walkthrough="setup"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 }
 
 @media (max-width: 640px) {
-  .faq-workflow-steps {
+  .faq-workflow-steps,
+  .faq-workflow-steps[data-walkthrough="water-test"],
+  .faq-workflow-steps[data-walkthrough="setup"] {
     grid-template-columns: 1fr;
     gap: 14px;
   }
@@ -1161,7 +1142,28 @@ main {
   }
 
   .step-badge {
-    margin-bottom: 6px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.15;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    font-size: 0.70rem;
+    font-weight: 700;
+  }
+
+  .step-badge span {
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 
   .step-img-box {
@@ -1632,29 +1634,34 @@ main {
 
   .gallery-indicators {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     width: 100%;
-    padding: 2px 4px;
-    margin-top: 8px;
+    padding: 0;
+    margin-top: 10px;
+    overflow: visible;
   }
 
-  .gallery-indicators::-webkit-scrollbar {
-    display: none;
+  .indicators-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    flex-wrap: nowrap;
   }
 
   .indicator-dot {
-    padding: 5px 11px;
+    padding: 5px 10px;
     font-size: 0.74rem;
     min-height: 28px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .overlay-nav-btn {
@@ -1935,7 +1942,19 @@ main {
   .showcase-text-col h3 {
     font-size: 1.42rem;
   }
+
+  .indicators-row {
+    gap: 5px;
+  }
+
+  .indicator-dot {
+    padding: 4px 8px;
+    font-size: 0.70rem;
+    min-height: 26px;
+  }
 }
+
+
 
 /* ==========================================================================
    Screenshot Fullscreen Lightbox Modal

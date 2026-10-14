@@ -40,7 +40,7 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/logo-premium-clean.png">
-  <link rel="stylesheet" href="styles.css?v=6.5">
+  <link rel="stylesheet" href="styles.css?v=6.9">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -95,6 +95,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Only if you want to use cloud backup of your data and AI expert analyses. You can log parameters and use core features locally without an account, but creating an account is required if you want secure cloud backup across your devices and access to AI expert analyses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to set up the app for first usage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Setting up Coralist for first usage is quick: 1. Click on Logbook in the bottom navigation. 2. Click on the Fish Icon in the top sub-menu to add your livestock. 3. Click on '+ Add Livestock'. 4. Fill in the details of the livestock being added. 5. Click on the Doser icon in the Logbook pane and click on 'Add Dosing'. 6. Add the details of your dosing solution. 7. Click on Hardware then click on 'Add Hardware'. 8. Add the details of your aquarium devices and equipment."
             }
           },
           {
@@ -257,14 +265,9 @@
 
 
               <!-- Phone Frame with Slides and Overlay Arrows -->
-              <div class="phone-mockup-frame gallery-frame" title="Click to view full size">
+              <div class="phone-mockup-frame gallery-frame">
                 <button class="overlay-nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
                 <button class="overlay-nav-btn next-btn" aria-label="Next screenshot">›</button>
-
-                <div class="gallery-expand-hint" aria-hidden="true">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  <span>Click to expand</span>
-                </div>
 
                 <div class="gallery-slides" id="gallery-slides">
                   <div class="gallery-slide active" data-slide-index="0">
@@ -297,11 +300,15 @@
 
               <!-- Interactive Dots / Tabs below app screenshots -->
               <div class="gallery-indicators" role="tablist" aria-label="App preview screens">
-                <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Parameters</button>
-                <button class="indicator-dot" data-index="1" role="tab" aria-selected="false">Logbook</button>
-                <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analyses &amp; Advice</button>
-                <button class="indicator-dot" data-index="3" role="tab" aria-selected="false">Tasks</button>
-                <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">AI Expert</button>
+                <div class="indicators-row">
+                  <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Parameters</button>
+                  <button class="indicator-dot" data-index="1" role="tab" aria-selected="false">Logbook</button>
+                  <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analyses &amp; Advice</button>
+                </div>
+                <div class="indicators-row">
+                  <button class="indicator-dot" data-index="3" role="tab" aria-selected="false">Tasks</button>
+                  <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">AI Expert</button>
+                </div>
               </div>
 
             </div>
@@ -493,6 +500,116 @@
             </div>
           </details>
 
+          <details class="faq-item" id="faq-app-setup-guide">
+            <summary class="faq-question">
+              <span>How to set up the app for first usage?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Setting up Coralist for your reef tank is quick and intuitive. By logging your livestock, dosing schedule, and equipment hardware upfront, the app can calculate accurate biological loads, predict parameter consumption, and provide contextual AI advice:
+              </p>
+
+              <div class="faq-workflow-steps" data-walkthrough="setup">
+                <!-- Step 1 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>1</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-1-click-log.jpg" alt="Step 1: Click on Logbook in the bottom navigation" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Click on Logbook</h4>
+                    <p>Tap <strong>Logbook</strong> in the bottom navigation bar to open your aquarium management hub.</p>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>2</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-2-fish-icon.jpg" alt="Step 2: Click on the Fish Icon to add your livestock" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Select Fish Icon</h4>
+                    <p>Click on the <strong>Fish Icon</strong> in the top sub-navigation to manage your aquarium livestock.</p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>3</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-3-add-livestock.jpg" alt="Step 3: Click on Add Livestock" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Click on Add Livestock</h4>
+                    <p>Tap the blue <strong>+ Add Livestock</strong> button to register a new coral, fish, or invertebrate.</p>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>4</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-4-livestock-details.jpg" alt="Step 4: Fill the details of the livestock being added" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Fill Livestock Details</h4>
+                    <p>Enter the species name, quantity, introduction date, and placement notes, then save.</p>
+                  </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>5</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-5-doser-icon.jpg" alt="Step 5: Click on the Doser icon in the Log pane and click on Add Dosing" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Select Doser Icon &amp; Add Dosing</h4>
+                    <p>Click on the <strong>Doser icon</strong> in the Log pane, then tap <strong>Add Dosing</strong>.</p>
+                  </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>6</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-6-dosing-details.jpg" alt="Step 6: Add the details of the dosing solution" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Add Dosing Details</h4>
+                    <p>Enter your additive details (element, brand, concentration, daily volume, and dosing schedule).</p>
+                  </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>7</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-7-hardware-add.jpg" alt="Step 7: Click on Hardware then click on Add Hardware" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Click Hardware &amp; Add Hardware</h4>
+                    <p>Click on the <strong>Hardware</strong> tab in the Log pane, then tap <strong>Add Hardware</strong>.</p>
+                  </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="workflow-step-card">
+                  <div class="step-badge"><span>Step</span> <span>8</span></div>
+                  <div class="step-img-box">
+                    <img src="assets/screenshots/setup-step-8-device-details.jpg" alt="Step 8: Add the details of your devices" width="764" height="1024" loading="lazy">
+                  </div>
+                  <div class="step-info">
+                    <h4>Add Device Details</h4>
+                    <p>Catalogue your equipment (lighting, skimmer, return pump, wavemaker) and maintenance schedules.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
           <details class="faq-item">
             <summary class="faq-question">
               <span>What water parameters can I log and track in Coralist?</span>
@@ -608,10 +725,10 @@
                 Using Coralist to analyze your water tests is fast and seamless. Simply log your latest test results, and our specialized AI Agent will cross-examine your readings against historical stability trends, aquarium volume, hardware configuration, and livestock demands to generate detailed diagnostics and advice:
               </p>
 
-              <div class="faq-workflow-steps">
+              <div class="faq-workflow-steps" data-walkthrough="water-test">
                 <!-- Step 1 -->
                 <div class="workflow-step-card">
-                  <div class="step-badge">Step 1</div>
+                  <div class="step-badge"><span>Step</span> <span>1</span></div>
                   <div class="step-img-box">
                     <img src="assets/screenshots/step-1-add-record.jpg" alt="Step 1: Click on the plus button to add a new record" width="764" height="1024" loading="lazy">
                   </div>
@@ -623,7 +740,7 @@
 
                 <!-- Step 2 -->
                 <div class="workflow-step-card">
-                  <div class="step-badge">Step 2</div>
+                  <div class="step-badge"><span>Step</span> <span>2</span></div>
                   <div class="step-img-box">
                     <img src="assets/screenshots/step-2-select-water-test.jpg" alt="Step 2: Select Water test from the category dropdown" width="764" height="1024" loading="lazy">
                   </div>
@@ -635,7 +752,7 @@
 
                 <!-- Step 3 -->
                 <div class="workflow-step-card">
-                  <div class="step-badge">Step 3</div>
+                  <div class="step-badge"><span>Step</span> <span>3</span></div>
                   <div class="step-img-box">
                     <img src="assets/screenshots/step-3-enter-parameters.jpg" alt="Step 3: Enter water parameters and tap Add" width="764" height="1024" loading="lazy">
                   </div>
@@ -647,7 +764,7 @@
 
                 <!-- Step 4 -->
                 <div class="workflow-step-card">
-                  <div class="step-badge">Step 4</div>
+                  <div class="step-badge"><span>Step</span> <span>4</span></div>
                   <div class="step-img-box">
                     <img src="assets/screenshots/step-4-ai-agent-analyzing.jpg" alt="Step 4: AI Agent analyzes parameters against tank history and livestock" width="764" height="1024" loading="lazy">
                   </div>
@@ -659,7 +776,7 @@
 
                 <!-- Step 5 -->
                 <div class="workflow-step-card">
-                  <div class="step-badge">Step 5</div>
+                  <div class="step-badge"><span>Step</span> <span>5</span></div>
                   <div class="step-img-box">
                     <img src="assets/screenshots/step-5-ai-advice-report.jpg" alt="Step 5: Receive personalized analyses and dosing advice" width="764" height="1024" loading="lazy">
                   </div>
@@ -747,29 +864,29 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal for Fullscreen Screenshot Zoom -->
+  <!-- Lightbox Modal for Walkthrough and Screenshots -->
   <div class="screenshot-lightbox" id="screenshot-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot preview" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-dialog">
       <div class="lightbox-top-bar">
         <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close preview" title="Close (Esc)">✕</button>
       </div>
-      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" aria-label="Previous screenshot">‹</button>
-      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" aria-label="Next screenshot">›</button>
+      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" aria-label="Previous step">‹</button>
+      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" aria-label="Next step">›</button>
       
       <div class="lightbox-content">
         <div class="lightbox-img-wrapper" id="lightbox-img-wrapper">
-          <img class="lightbox-image" id="lightbox-image" src="assets/screenshots/feature-dashboard.jpg" alt="Enlarged screenshot preview">
+          <img class="lightbox-image" id="lightbox-image" src="assets/screenshots/step-1-add-record.jpg" alt="Water test step preview">
         </div>
         <div class="lightbox-footer">
-          <div class="lightbox-caption" id="lightbox-caption">1 / 5 — Parameters &amp; Stability: Master Your Reef Tank</div>
-          <div class="lightbox-hint">Press Esc to close • Use ‹ › or arrow keys to browse</div>
+          <div class="lightbox-caption" id="lightbox-caption">Water Test Walkthrough — Step 1: Click the + Button</div>
+          <div class="lightbox-hint">Use ‹ › arrows to browse steps • Press Esc to close</div>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="script.js?v=6.5"></script>
+  <script src="script.js?v=6.9"></script>
 </body>
 
 </html>

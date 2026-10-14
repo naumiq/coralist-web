@@ -173,8 +173,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Fullscreen Screenshot Lightbox Controller
-    const lightbox = document.getElementById('screenshot-lightbox');
+    // Support switching screenshots directly from feature cards
+    document.querySelectorAll('[data-open-screenshot]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const slideIdx = parseInt(btn.dataset.openScreenshot, 10);
+        if (!isNaN(slideIdx)) {
+          const dir = slideIdx >= currentIndex ? 'next' : 'prev';
+          goToSlide(slideIdx, dir);
+          galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  }
+
+  // Walkthrough Lightbox Controller (Strictly navigates active FAQ Walkthrough screenshots)
+  const lightbox = document.getElementById('screenshot-lightbox');
+  if (lightbox) {
     const lightboxImg = document.getElementById('lightbox-image');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
@@ -182,145 +197,155 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxPrevBtn = document.getElementById('lightbox-prev-btn');
     const lightboxNextBtn = document.getElementById('lightbox-next-btn');
 
-    const screenshotData = [
-      {
-        src: 'assets/screenshots/feature-dashboard.jpg',
-        alt: 'Coralist Parameters & Stability Dashboard Preview',
-        title: '1 / 5 — Parameters & Stability: Master Your Reef Tank'
-      },
-      {
-        src: 'assets/screenshots/feature-logbook.jpg',
-        alt: 'Coralist Digital Tank Logbook Preview',
-        title: '2 / 5 — Digital Tank Logbook: Easy & Quick Logbook'
-      },
-      {
-        src: 'assets/screenshots/feature-analyses.jpg',
-        alt: 'Coralist Smart AI Analyses & Advice Preview',
-        title: '3 / 5 — Smart AI Analyses & Advice: Expert Diagnostics'
-      },
-      {
-        src: 'assets/screenshots/feature-tasks.jpg',
-        alt: 'Coralist Smart Task Scheduler Preview',
-        title: '4 / 5 — Smart Task Scheduler: Never Miss a Dose'
-      },
-      {
-        src: 'assets/screenshots/feature-assistant.jpg',
-        alt: 'Coralist 24/7 AI Marine Expert Preview',
-        title: '5 / 5 — 24/7 AI Marine Expert: Specialized Reef Intelligence'
-      }
-    ];
+    const walkthroughs = {
+      'setup': [
+        {
+          src: 'assets/screenshots/setup-step-1-click-log.jpg',
+          alt: 'Step 1: Click on Logbook in the bottom navigation',
+          title: 'App Setup — Step 1 of 8: Click on Logbook'
+        },
+        {
+          src: 'assets/screenshots/setup-step-2-fish-icon.jpg',
+          alt: 'Step 2: Click on the Fish Icon to add your livestock',
+          title: 'App Setup — Step 2 of 8: Select Fish Icon'
+        },
+        {
+          src: 'assets/screenshots/setup-step-3-add-livestock.jpg',
+          alt: 'Step 3: Click on Add Livestock',
+          title: 'App Setup — Step 3 of 8: Click on Add Livestock'
+        },
+        {
+          src: 'assets/screenshots/setup-step-4-livestock-details.jpg',
+          alt: 'Step 4: Fill the details of the livestock being added',
+          title: 'App Setup — Step 4 of 8: Fill Livestock Details'
+        },
+        {
+          src: 'assets/screenshots/setup-step-5-doser-icon.jpg',
+          alt: 'Step 5: Click on the Doser icon in the Log pane and click on Add Dosing',
+          title: 'App Setup — Step 5 of 8: Select Doser Icon & Add Dosing'
+        },
+        {
+          src: 'assets/screenshots/setup-step-6-dosing-details.jpg',
+          alt: 'Step 6: Add the details of the dosing solution',
+          title: 'App Setup — Step 6 of 8: Add Dosing Details'
+        },
+        {
+          src: 'assets/screenshots/setup-step-7-hardware-add.jpg',
+          alt: 'Step 7: Click on Hardware then click on Add Hardware',
+          title: 'App Setup — Step 7 of 8: Click Hardware & Add Hardware'
+        },
+        {
+          src: 'assets/screenshots/setup-step-8-device-details.jpg',
+          alt: 'Step 8: Add the details of your devices',
+          title: 'App Setup — Step 8 of 8: Add Device Details'
+        }
+      ],
+      'water-test': [
+        {
+          src: 'assets/screenshots/step-1-add-record.jpg',
+          alt: 'Step 1: Click on the plus button to add a new record',
+          title: 'Water Test Walkthrough — Step 1 of 5: Click the + Button'
+        },
+        {
+          src: 'assets/screenshots/step-2-select-water-test.jpg',
+          alt: 'Step 2: Select Water test from the category dropdown',
+          title: 'Water Test Walkthrough — Step 2 of 5: Select "Water test"'
+        },
+        {
+          src: 'assets/screenshots/step-3-enter-parameters.jpg',
+          alt: 'Step 3: Enter water parameters and tap Add',
+          title: 'Water Test Walkthrough — Step 3 of 5: Add Parameters & Submit'
+        },
+        {
+          src: 'assets/screenshots/step-4-ai-agent-analyzing.jpg',
+          alt: 'Step 4: AI Agent analyzes parameters against tank history and livestock',
+          title: 'Water Test Walkthrough — Step 4 of 5: AI Agent Analyzes Your Tank'
+        },
+        {
+          src: 'assets/screenshots/step-5-ai-advice-report.jpg',
+          alt: 'Step 5: Receive personalized analyses and dosing advice',
+          title: 'Water Test Walkthrough — Step 5 of 5: Receive Analyses & Advice'
+        }
+      ]
+    };
 
-    function updateLightboxContent(index) {
-      if (!lightboxImg || !screenshotData[index]) return;
-      lightboxImg.src = screenshotData[index].src;
-      lightboxImg.alt = screenshotData[index].alt;
-      if (lightboxCaption) {
-        lightboxCaption.textContent = screenshotData[index].title;
+    let activeWalkthroughKey = 'setup';
+    let currentStepIdx = 0;
+
+    function updateStepLightbox(index) {
+      const activeList = walkthroughs[activeWalkthroughKey] || walkthroughs['setup'];
+      currentStepIdx = (index + activeList.length) % activeList.length;
+      const step = activeList[currentStepIdx];
+      if (lightboxImg && step) {
+        lightboxImg.src = step.src;
+        lightboxImg.alt = step.alt;
+      }
+      if (lightboxCaption && step) {
+        lightboxCaption.textContent = step.title;
       }
     }
 
-    function openLightbox(index) {
-      if (!lightbox) return;
-      const targetIdx = index !== undefined ? index : currentIndex;
-      updateLightboxContent(targetIdx);
+    function openStepLightbox(walkthroughKey, index) {
+      activeWalkthroughKey = walkthroughKey;
+      updateStepLightbox(index);
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeLightbox() {
-      if (!lightbox) return;
+    function closeStepLightbox() {
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
-    // Clicking directly on gallery slide images opens enlarged view
-    slides.forEach((slide, idx) => {
-      slide.style.cursor = 'pointer';
-      slide.addEventListener('click', (e) => {
-        // Only trigger if click wasn't on overlay navigation buttons
-        if (!e.target.closest('.overlay-nav-btn')) {
-          openLightbox(idx);
+    // Attach click listener to each FAQ walkthrough step card, isolated by walkthrough group
+    document.querySelectorAll('.faq-workflow-steps').forEach((container) => {
+      const walkthroughKey = container.dataset.walkthrough || 'setup';
+      container.querySelectorAll('.workflow-step-card').forEach((card, index) => {
+        const img = card.querySelector('img');
+        if (img) {
+          img.title = 'Click to view step full size';
+          img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openStepLightbox(walkthroughKey, index);
+          });
         }
       });
     });
 
     if (lightboxCloseBtn) {
-      lightboxCloseBtn.addEventListener('click', closeLightbox);
+      lightboxCloseBtn.addEventListener('click', closeStepLightbox);
     }
 
     if (lightboxBackdrop) {
-      lightboxBackdrop.addEventListener('click', closeLightbox);
+      lightboxBackdrop.addEventListener('click', closeStepLightbox);
     }
 
     if (lightboxPrevBtn) {
       lightboxPrevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const prevIdx = (currentIndex - 1 + slides.length) % slides.length;
-        goToSlide(prevIdx, 'prev');
-        updateLightboxContent(prevIdx);
+        updateStepLightbox(currentStepIdx - 1);
       });
     }
 
     if (lightboxNextBtn) {
       lightboxNextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const nextIdx = (currentIndex + 1) % slides.length;
-        goToSlide(nextIdx, 'next');
-        updateLightboxContent(nextIdx);
+        updateStepLightbox(currentStepIdx + 1);
       });
     }
 
-    // Keyboard navigation when Lightbox is active
+    // Keyboard navigation strictly across the active walkthrough steps
     document.addEventListener('keydown', (e) => {
-      if (!lightbox || !lightbox.classList.contains('is-open')) return;
+      if (!lightbox.classList.contains('is-open')) return;
 
       if (e.key === 'Escape') {
-        closeLightbox();
+        closeStepLightbox();
       } else if (e.key === 'ArrowLeft') {
-        const prevIdx = (currentIndex - 1 + slides.length) % slides.length;
-        goToSlide(prevIdx, 'prev');
-        updateLightboxContent(prevIdx);
+        updateStepLightbox(currentStepIdx - 1);
       } else if (e.key === 'ArrowRight') {
-        const nextIdx = (currentIndex + 1) % slides.length;
-        goToSlide(nextIdx, 'next');
-        updateLightboxContent(nextIdx);
-      }
-    });
-
-    // Support opening screenshot directly from any feature card link
-    document.querySelectorAll('[data-open-screenshot]').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const slideIdx = parseInt(btn.dataset.openScreenshot, 10);
-        if (!isNaN(slideIdx)) {
-          goToSlide(slideIdx);
-          openLightbox(slideIdx);
-        }
-      });
-    });
-
-    // Support expanding FAQ step images into Lightbox
-    document.querySelectorAll('.workflow-step-card').forEach((card, index) => {
-      const img = card.querySelector('img');
-      const heading = card.querySelector('h4');
-      const title = heading ? heading.textContent : `Step ${index + 1}`;
-      if (img) {
-        img.title = 'Click to enlarge image';
-        img.addEventListener('click', (e) => {
-          e.stopPropagation();
-          if (lightbox && lightboxImg) {
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            if (lightboxCaption) {
-              lightboxCaption.textContent = `Water Test Walkthrough — ${title}`;
-            }
-            lightbox.classList.add('is-open');
-            lightbox.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-          }
-        });
+        updateStepLightbox(currentStepIdx + 1);
       }
     });
   }
