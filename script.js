@@ -349,4 +349,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Live Favicon Dark Mode Synchronization
+  if (window.matchMedia) {
+    const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    const updateDynamicFavicon = (e) => {
+      const isDark = e.matches;
+      document.querySelectorAll('link[rel="icon"]').forEach((link) => {
+        if (link.type === 'image/png') {
+          link.href = isDark ? 'assets/favicon-dark-32x32.png' : 'assets/favicon-32x32.png';
+        }
+      });
+    };
+
+    try {
+      darkModeMedia.addEventListener('change', updateDynamicFavicon);
+    } catch {
+      darkModeMedia.addListener(updateDynamicFavicon);
+    }
+  }
 });
