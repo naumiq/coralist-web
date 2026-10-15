@@ -102,21 +102,28 @@ section[id] {
   height: 88px;
 }
 
-/* Brand Logo (Left-Aligned, Centered Stack: Silhouette on top, CORALIST underneath) */
+/* Brand Logo (Official Coralist Emblem Badge) */
 .brand-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
   text-decoration: none;
   cursor: pointer;
-  padding: 4px 0;
-  transition: opacity 0.15s ease;
+  padding: 2px 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .brand-link:hover {
-  opacity: 0.82;
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.brand-logo-img {
+  height: 58px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-icon-mask {
@@ -1480,24 +1487,16 @@ main {
 
   .brand-link {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
     padding: 0;
   }
 
-  .brand-icon-mask {
-    width: 30px;
-    height: 30px;
-  }
-
-  .brand-text {
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    line-height: 1;
+  .brand-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 50px;
+    object-fit: contain;
   }
 
   .site-nav {
