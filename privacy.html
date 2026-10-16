@@ -32,25 +32,33 @@
   <meta name="theme-color" content="#042c50">
 
   <!-- Favicons (Adaptive Light / Dark Mode) -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-dark-32x32.png" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" media="(prefers-color-scheme: light)">
-  <link rel="icon" type="image/png" href="assets/favicon-dark-32x32.png" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=4" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
+  <link rel="icon" type="image/png" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png?v=4">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <script>
     (function () {
       try {
         var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var links = document.querySelectorAll('link[rel="icon"]');
+        links.forEach(function (l) {
+          if (l.getAttribute('type') === 'image/svg+xml') {
+            l.parentNode.removeChild(l);
+          } else if (l.getAttribute('type') === 'image/png') {
+            l.href = (isDark ? 'assets/favicon-dark-32x32.png?v=4' : 'assets/favicon-32x32.png?v=4');
+          }
+        });
         if (isDark) {
-          var links = document.querySelectorAll('link[rel="icon"]');
-          links.forEach(function (l) {
-            if (l.type === 'image/png') {
-              l.href = 'assets/favicon-dark-32x32.png';
-            }
-          });
+          var darkLink = document.createElement('link');
+          darkLink.rel = 'icon';
+          darkLink.type = 'image/png';
+          darkLink.sizes = '32x32';
+          darkLink.href = 'assets/favicon-dark-32x32.png?v=4';
+          document.head.appendChild(darkLink);
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
   <link rel="stylesheet" href="styles.css?v=8.1">
@@ -63,7 +71,7 @@
     <div class="container nav-row">
       <!-- Left: Official Coralist Logo -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <img src="assets/coral-silhouette.png" alt="Coralist" class="brand-logo-img" width="60" height="60">
+        <img src="assets/coral-silhouette.png" alt="Coralist" class="brand-logo-img" width="75" height="75">
       </a>
 
       <!-- Right: Navigation -->
@@ -439,7 +447,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.5"></script>
+  <script src="script.js?v=3.5"></script>
 </body>
 
 </html>

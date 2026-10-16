@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDark = e.matches;
       document.querySelectorAll('link[rel="icon"]').forEach((link) => {
         if (link.type === 'image/png') {
-          link.href = isDark ? 'assets/favicon-dark-32x32.png' : 'assets/favicon-32x32.png';
+          link.href = isDark ? 'assets/favicon-dark-32x32.png?v=4' : 'assets/favicon-32x32.png?v=4';
         }
       });
     };

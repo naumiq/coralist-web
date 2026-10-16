@@ -119,9 +119,9 @@ section[id] {
 }
 
 .brand-logo-img {
-  height: 62px;
+  height: 78px;
   width: auto;
-  max-width: 64px;
+  max-width: 80px;
   object-fit: contain;
   display: block;
 }
@@ -1501,9 +1501,9 @@ main {
   }
 
   .brand-logo-img {
-    height: 52px;
+    height: 65px;
     width: auto;
-    max-width: 54px;
+    max-width: 68px;
     object-fit: contain;
   }
 
