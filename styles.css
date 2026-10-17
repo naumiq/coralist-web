@@ -1178,7 +1178,8 @@ main {
   margin-bottom: 0;
 }
 
-.faq-answer ul {
+.faq-answer ul,
+.faq-answer ol {
   margin: 8px 0 14px 20px;
   padding: 0;
   display: flex;
@@ -1380,6 +1381,224 @@ main {
     width: 105px;
     min-width: 105px;
     margin-bottom: 0;
+  }
+}
+
+/* ==========================================================================
+   Account and Data Deletion FAQ Styles
+   ========================================================================== */
+.deletion-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 18px 0 20px;
+}
+
+.deletion-method-card {
+  background: var(--bg-muted);
+  border: 1px solid var(--navy-border-subtle);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.deletion-method-card:hover {
+  border-color: rgba(4, 44, 80, 0.25);
+  box-shadow: 0 4px 14px rgba(4, 44, 80, 0.04);
+}
+
+.method-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.method-card-header h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.method-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+}
+
+.method-badge.instant {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.method-badge.manual {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.deletion-steps-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 0.91rem;
+}
+
+.deletion-steps-list li {
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.deletion-steps-list li strong {
+  color: var(--navy-primary);
+  font-weight: 700;
+}
+
+.method-desc {
+  font-size: 0.91rem;
+  color: var(--text-secondary);
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+
+.deletion-email-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--navy-border-subtle);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.88rem;
+  margin-top: auto;
+  box-shadow: 0 1px 3px rgba(4, 44, 80, 0.03);
+}
+
+.email-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy-primary);
+}
+
+.email-meta-link {
+  color: #0284c7;
+  font-weight: 700;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: color 0.15s ease;
+}
+
+.email-meta-link:hover {
+  color: var(--navy-primary);
+}
+
+.meta-value {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.deletion-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 0 0 18px;
+}
+
+.deletion-info-block {
+  background: #f8fafc;
+  border: 1px solid var(--border-hairline);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.deletion-block-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin: 0 0 10px;
+}
+
+.deletion-info-block p {
+  font-size: 0.89rem;
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+  line-height: 1.55;
+}
+
+.deletion-bullets {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.88rem;
+}
+
+.deletion-bullets li {
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.deletion-bullets li strong {
+  color: var(--navy-primary);
+  font-weight: 700;
+}
+
+.deletion-sub-callout {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 14px;
+}
+
+.sub-callout-icon {
+  color: #d97706;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sub-callout-text p {
+  margin: 0;
+  font-size: 0.89rem;
+  line-height: 1.6;
+  color: #92400e;
+}
+
+.sub-callout-text strong {
+  color: #78350f;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .deletion-methods-grid,
+  .deletion-info-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 

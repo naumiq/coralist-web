@@ -47,6 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Function to open details accordion and scroll target below fixed header
+  function openDetailsTarget(targetElement) {
+    if (!targetElement) return;
+    const details = targetElement.tagName.toLowerCase() === 'details' 
+      ? targetElement 
+      : targetElement.closest('details');
+    if (details) {
+      details.open = true;
+    }
+    const header = document.querySelector('.site-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+  }
+
   // Smooth scrolling for page anchors (accounting for fixed header)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -55,14 +70,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          const header = document.querySelector('.site-header');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
-          window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+          openDetailsTarget(targetElement);
         }
       }
     });
   });
+
+  // Open details and scroll if URL contains hash on page load or hash change
+  function handleUrlHash() {
+    if (window.location.hash && window.location.hash.length > 1) {
+      try {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+          setTimeout(() => {
+            openDetailsTarget(targetElement);
+          }, 150);
+        }
+      } catch (err) {
+        // Ignore invalid selectors
+      }
+    }
+  }
+  handleUrlHash();
+  window.addEventListener('hashchange', handleUrlHash);
 
   // Interactive App Screenshot Gallery
   const galleryContainer = document.querySelector('.gallery-container');
