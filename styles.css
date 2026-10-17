@@ -1388,8 +1388,8 @@ main {
    Account and Data Deletion FAQ Styles
    ========================================================================== */
 .deletion-methods-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   margin: 18px 0 20px;
 }
@@ -1410,14 +1410,11 @@ main {
 }
 
 .method-card-header {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .method-card-header h4 {
-  font-size: 0.98rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--navy-primary);
   margin: 0;
@@ -1595,7 +1592,9 @@ main {
 }
 
 @media (max-width: 768px) {
-  .deletion-methods-grid,
+  .deletion-methods-grid {
+    gap: 14px;
+  }
   .deletion-info-grid {
     grid-template-columns: 1fr;
     gap: 14px;
