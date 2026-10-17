@@ -31,37 +31,11 @@
   <!-- Mobile Browser Theme Color -->
   <meta name="theme-color" content="#042c50">
 
-  <!-- Favicons (Adaptive Light / Dark Mode) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=4" media="(prefers-color-scheme: light)">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
-  <link rel="icon" type="image/png" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="assets/favicon-32x32.png?v=4">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <script>
-    (function () {
-      try {
-        var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var links = document.querySelectorAll('link[rel="icon"]');
-        links.forEach(function (l) {
-          if (l.getAttribute('type') === 'image/svg+xml') {
-            l.parentNode.removeChild(l);
-          } else if (l.getAttribute('type') === 'image/png') {
-            l.href = (isDark ? 'assets/favicon-dark-32x32.png?v=4' : 'assets/favicon-32x32.png?v=4');
-          }
-        });
-        if (isDark) {
-          var darkLink = document.createElement('link');
-          darkLink.rel = 'icon';
-          darkLink.type = 'image/png';
-          darkLink.sizes = '32x32';
-          darkLink.href = 'assets/favicon-dark-32x32.png?v=4';
-          document.head.appendChild(darkLink);
-        }
-      } catch (e) { }
-    })();
-  </script>
-  <link rel="stylesheet" href="styles.css?v=8.1">
+  <link rel="stylesheet" href="styles.css?v=7.0">
 </head>
 
 <body>
@@ -69,30 +43,28 @@
   <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-row">
-      <!-- Left: Clean Horizontal Brand Logo Lockup -->
+      <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <img src="assets/coral.svg" alt="" class="brand-logo-icon" width="27" height="32" aria-hidden="true">
-        <span class="brand-name">CORALIST</span>
+        <div class="brand-icon-mask"></div>
+        <span class="brand-text">Coralist</span>
       </a>
 
-      <!-- Center / Right: Navigation -->
+      <!-- Right: Navigation -->
       <nav class="site-nav">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#features">Features</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </nav>
 
-      <!-- Far Right: Actions (Primary CTA & Mobile Hamburger) -->
-      <div class="nav-actions">
-        <a href="index.html#download-app" class="navbar-cta-btn">Get the App</a>
-        <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </div>
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
 
@@ -354,6 +326,8 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#features">Features</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="terms.html" class="active">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </nav>
 
@@ -374,16 +348,11 @@
 
       <div class="footer-bottom">
         <p>© 2026 Coralist. All rights reserved.</p>
-        <div class="footer-legal-links">
-          <a href="terms.html" class="active">Terms &amp; Conditions</a>
-          <span class="legal-separator">•</span>
-          <a href="privacy.html">Privacy Policy</a>
-        </div>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=3.5"></script>
+  <script src="script.js?v=2.5"></script>
 </body>
 
 </html>

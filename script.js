@@ -68,16 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const galleryContainer = document.querySelector('.gallery-container');
   if (galleryContainer) {
     const slides = galleryContainer.querySelectorAll('.gallery-slide');
-    const dots = galleryContainer.querySelectorAll('.pagination-dot, .indicator-dot');
+    const dots = galleryContainer.querySelectorAll('.indicator-dot');
     const prevBtn = galleryContainer.querySelector('.prev-btn');
     const nextBtn = galleryContainer.querySelector('.next-btn');
     const captionEl = document.getElementById('gallery-caption');
-    const featureItems = document.querySelectorAll('.feature-tab-card, .feature-list .feature-item');
+    const featureItems = document.querySelectorAll('.feature-list .feature-item');
 
     const slideData = [
-      { title: 'Parameters & Stability', sub: '1 / 3' },
-      { title: 'Digital Tank Logbook', sub: '2 / 3' },
-      { title: 'Smart AI Analyses & Advice', sub: '3 / 3' }
+      { title: 'Parameters & Stability', sub: '1 / 5' },
+      { title: 'Digital Tank Logbook', sub: '2 / 5' },
+      { title: 'Smart AI Analyses & Advice', sub: '3 / 5' },
+      { title: 'Smart Task Scheduler', sub: '4 / 5' },
+      { title: '24/7 AI Marine Expert', sub: '5 / 5' }
     ];
 
     let currentIndex = 0;
@@ -103,12 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
       });
 
-      // Synchronize feature cards active state
+      // Synchronize feature items active state
       featureItems.forEach((item) => {
         const target = parseInt(item.dataset.slide, 10);
-        const isActive = target === currentIndex;
-        item.classList.toggle('is-active', isActive);
-        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        item.classList.toggle('is-active', target === currentIndex);
       });
 
       if (captionEl && slideData[currentIndex]) {
@@ -157,11 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: true });
     }
 
-    // Connect feature cards to gallery slides
+    // Connect feature bullet items to gallery slides
     featureItems.forEach((item, index) => {
       item.style.cursor = 'pointer';
       item.title = 'Click to view screenshot';
-      const switchSlide = () => {
+      item.addEventListener('click', () => {
         const targetSlide = item.dataset.slide !== undefined
           ? parseInt(item.dataset.slide, 10)
           : index;
@@ -170,14 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const dir = targetSlide >= currentIndex ? 'next' : 'prev';
           goToSlide(targetSlide, dir);
         }
-      };
-
-      item.addEventListener('click', switchSlide);
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          switchSlide();
-        }
       });
     });
 
@@ -185,9 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-open-screenshot]').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        let slideIdx = parseInt(btn.dataset.openScreenshot, 10);
+        const slideIdx = parseInt(btn.dataset.openScreenshot, 10);
         if (!isNaN(slideIdx)) {
-          slideIdx = slideIdx % slides.length;
           const dir = slideIdx >= currentIndex ? 'next' : 'prev';
           goToSlide(slideIdx, dir);
           galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -357,24 +348,5 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStepLightbox(currentStepIdx + 1);
       }
     });
-  }
-
-  // Live Favicon Dark Mode Synchronization
-  if (window.matchMedia) {
-    const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    const updateDynamicFavicon = (e) => {
-      const isDark = e.matches;
-      document.querySelectorAll('link[rel="icon"]').forEach((link) => {
-        if (link.type === 'image/png') {
-          link.href = isDark ? 'assets/favicon-dark-32x32.png?v=4' : 'assets/favicon-32x32.png?v=4';
-        }
-      });
-    };
-
-    try {
-      darkModeMedia.addEventListener('change', updateDynamicFavicon);
-    } catch {
-      darkModeMedia.addListener(updateDynamicFavicon);
-    }
   }
 });

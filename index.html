@@ -37,37 +37,11 @@
   <!-- Mobile Browser Theme Color -->
   <meta name="theme-color" content="#042c50">
 
-  <!-- Favicons (Adaptive Light / Dark Mode) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=4" media="(prefers-color-scheme: light)">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=4">
-  <link rel="icon" type="image/png" href="assets/favicon-dark-32x32.png?v=4" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="assets/favicon-32x32.png?v=4">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <script>
-    (function () {
-      try {
-        var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var links = document.querySelectorAll('link[rel="icon"]');
-        links.forEach(function (l) {
-          if (l.getAttribute('type') === 'image/svg+xml') {
-            l.parentNode.removeChild(l);
-          } else if (l.getAttribute('type') === 'image/png') {
-            l.href = (isDark ? 'assets/favicon-dark-32x32.png?v=4' : 'assets/favicon-32x32.png?v=4');
-          }
-        });
-        if (isDark) {
-          var darkLink = document.createElement('link');
-          darkLink.rel = 'icon';
-          darkLink.type = 'image/png';
-          darkLink.sizes = '32x32';
-          darkLink.href = 'assets/favicon-dark-32x32.png?v=4';
-          document.head.appendChild(darkLink);
-        }
-      } catch (e) { }
-    })();
-  </script>
-  <link rel="stylesheet" href="styles.css?v=8.1">
+  <link rel="stylesheet" href="styles.css?v=7.2">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -192,30 +166,28 @@
   <!-- Site Header -->
   <header class="site-header">
     <div class="container nav-row">
-      <!-- Left: Clean Horizontal Brand Logo Lockup -->
+      <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <img src="assets/coral.svg" alt="" class="brand-logo-icon" width="27" height="32" aria-hidden="true">
-        <span class="brand-name">CORALIST</span>
+        <div class="brand-icon-mask"></div>
+        <span class="brand-text">Coralist</span>
       </a>
 
-      <!-- Center / Right: Primary Navigation -->
+      <!-- Right: Navigation -->
       <nav class="site-nav">
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </nav>
 
-      <!-- Far Right: Actions (Primary CTA & Mobile Hamburger) -->
-      <div class="nav-actions">
-        <a href="#download-app" class="navbar-cta-btn">Get the App</a>
-        <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </div>
+      <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
     </div>
   </header>
   <!-- Main Content -->
@@ -225,126 +197,121 @@
       <section class="hero-section">
         <!-- Product Preview Card -->
         <div class="showcase-card">
-          <!-- Zone 1: Top Hero Block (Centered & High-Impact) -->
-          <div class="hero-header-block" id="download-app">
-            <div class="hero-eyebrow-badge">CORALIST</div>
-            <h1 class="hero-headline">Your Personal Reef Tank Expert</h1>
-            <p class="hero-intro">
+          <div class="showcase-header">
+            <h1>Your Personal Reef Tank Expert</h1>
+          </div>
+
+          <div class="showcase-text-col">
+            <p>
               Built by a reef keeper to simplify testing, logging, and keeping water
               parameters steady. Coralist connects your test results, dosing routines, hardware setup, and livestock
               in one clear view for your saltwater aquarium. All of this feeds into an AI agent that identifies
               patterns, spots emerging problems, and proposes practical advice tailored to your system.
             </p>
-            <div class="hero-cta-group">
-              <!-- Official App Store Button -->
-              <a href="#beta-signup" class="store-badge-btn" aria-label="Download Coralist on the App Store">
-                <svg class="store-badge-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.62-.75 1.04-1.8 1.01-2.84-.96.04-2.13.64-2.79 1.41-.58.67-1.1 1.74-.96 2.77 1.07.08 2.12-.59 2.74-1.34z"/>
-                </svg>
-                <div class="store-badge-copy">
-                  <span class="store-badge-sub">Download on the</span>
-                  <span class="store-badge-name">App Store</span>
+
+            <ul class="feature-list">
+              <li class="feature-item is-active" data-slide="0">
+                <span class="feature-bullet"></span>
+                <div>
+                  <strong>Master Your Reef Tank</strong>
+                  <span class="feature-sub">Log &amp; monitor parameters with ease. Track stability trends and keep water chemistry steady.</span>
                 </div>
-              </a>
-              <!-- Official Google Play Button -->
-              <a href="#beta-signup" class="store-badge-btn" aria-label="Get Coralist on Google Play">
-                <svg class="store-badge-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
-                  <path d="M3.609 1.814L13.793 12 3.61 22.186c-.368-.382-.61-.958-.61-1.636V3.45c0-.678.242-1.254.61-1.636zm11.238 11.239l2.458 2.458-11.83 6.83 9.372-9.288zm0-2.106L5.475 1.66 17.305 8.49l-2.458 2.457zm1.488 1.053l3.654 2.11c1.071.618 1.071 1.63 0 2.25l-3.654 2.11-2.67-2.67 2.67-2.67v.87z"/>
-                </svg>
-                <div class="store-badge-copy">
-                  <span class="store-badge-sub">GET IT ON</span>
-                  <span class="store-badge-name">Google Play</span>
+              </li>
+
+              <li class="feature-item" data-slide="1">
+                <span class="feature-bullet"></span>
+                <div>
+                  <strong>Easy &amp; Quick Logbook</strong>
+                  <span class="feature-sub">Keep a detailed history of water tests, dosing routines, hardware, and livestock additions across your tanks.</span>
                 </div>
+              </li>
+
+              <li class="feature-item" data-slide="2">
+                <span class="feature-bullet"></span>
+                <div>
+                  <strong>Smart AI Analyses &amp; Advice</strong>
+                  <span class="feature-sub">Optimize your tank with expert diagnostics, automated nutrient tracking, and targeted dosing adjustments.</span>
+                </div>
+              </li>
+
+              <li class="feature-item" data-slide="3">
+                <span class="feature-bullet"></span>
+                <div>
+                  <strong>Never Miss a Dose</strong>
+                  <span class="feature-sub">Automated task schedules and timely alerts tailored to your aquarium setup and maintenance demands.</span>
+                </div>
+              </li>
+
+              <li class="feature-item" data-slide="4">
+                <span class="feature-bullet"></span>
+                <div>
+                  <strong>Your 24/7 Marine Expert</strong>
+                  <span class="feature-sub">Chat with specialized AI Agent anytime for dosing calculations, problem diagnoses, and coral compatibility.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="btn-group" style="margin-top: 10px;">
+              <a href="#beta-signup"
+                class="btn btn-primary">
+                <span>Apply for Beta Access</span>
+                <span style="font-size: 1.1em; line-height: 1;">→</span>
               </a>
+              <a href="#features" class="btn btn-secondary">Explore Features</a>
             </div>
           </div>
 
-          <!-- Zone 2: 2-Column Interactive Feature Tabs & Phone Carousel -->
-          <div class="showcase-content-grid">
-            <!-- Left Column: Interactive Feature Tabs (Modern SaaS Cards) -->
-            <div class="feature-tabs-col" role="tablist" aria-label="Key App Features">
-              <div class="feature-tab-card is-active" data-slide="0" role="tab" aria-selected="true" tabindex="0">
-                <div class="feature-tab-title-row">
-                  <div class="feature-tab-icon" aria-hidden="true">
-                    <!-- Gauge / Activity pulse icon -->
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2a10 10 0 1 0 10 10" />
-                      <path d="m16 8-4 4" />
-                      <circle cx="12" cy="12" r="2" />
-                    </svg>
+          <div class="showcase-mockup-col">
+            <div class="gallery-container" aria-label="Coralist Mobile App Gallery">
+
+
+              <!-- Phone Frame with Slides and Overlay Arrows -->
+              <div class="phone-mockup-frame gallery-frame">
+                <button class="overlay-nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
+                <button class="overlay-nav-btn next-btn" aria-label="Next screenshot">›</button>
+
+                <div class="gallery-slides" id="gallery-slides">
+                  <div class="gallery-slide active" data-slide-index="0">
+                    <img src="assets/screenshots/feature-dashboard.jpg"
+                      alt="Coralist Mobile App - Master Your Reef Tank, Log & Monitor Parameters with Ease" width="764" height="1024"
+                      fetchpriority="high">
                   </div>
-                  <h3 class="feature-tab-title">Master Your Reef Tank</h3>
-                </div>
-                <p class="feature-tab-sub">Log &amp; monitor parameters with ease. Track stability trends and keep water chemistry steady.</p>
-              </div>
-
-              <div class="feature-tab-card" data-slide="1" role="tab" aria-selected="false" tabindex="0">
-                <div class="feature-tab-title-row">
-                  <div class="feature-tab-icon" aria-hidden="true">
-                    <!-- Book / Clipboard check icon -->
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-                      <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-                      <path d="m9 14 2 2 4-4" />
-                    </svg>
+                  <div class="gallery-slide" data-slide-index="1">
+                    <img src="assets/screenshots/feature-logbook.jpg"
+                      alt="Coralist Digital Logbook - Easy & Quick Logbook, Keep a Detailed History of Your Tank" width="764" height="1024"
+                      loading="lazy">
                   </div>
-                  <h3 class="feature-tab-title">Easy &amp; Quick Logbook</h3>
-                </div>
-                <p class="feature-tab-sub">Keep a detailed history of water tests, dosing routines, hardware, and livestock additions across your tanks.</p>
-              </div>
-
-              <div class="feature-tab-card" data-slide="2" role="tab" aria-selected="false" tabindex="0">
-                <div class="feature-tab-title-row">
-                  <div class="feature-tab-icon" aria-hidden="true">
-                    <!-- Sparkles / AI lightbulb icon -->
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-                      <path d="M5 3v4" />
-                      <path d="M19 17v4" />
-                      <path d="M3 5h4" />
-                      <path d="M17 19h4" />
-                    </svg>
+                  <div class="gallery-slide" data-slide-index="2">
+                    <img src="assets/screenshots/feature-analyses.jpg"
+                      alt="Coralist Smart AI Analyses & Advice - Optimize Your Tank with Expert Diagnostics" width="764" height="1024"
+                      loading="lazy">
                   </div>
-                  <h3 class="feature-tab-title">Smart AI Analyses &amp; Advice</h3>
-                </div>
-                <p class="feature-tab-sub">Optimize your tank with expert diagnostics, automated nutrient tracking, and targeted dosing adjustments.</p>
-              </div>
-            </div>
-
-            <!-- Right Column: Phone Carousel -->
-            <div class="showcase-mockup-col">
-              <div class="gallery-container" aria-label="Coralist Mobile App Gallery">
-                <!-- Phone Frame with Slides and Overlay Arrows -->
-                <div class="phone-mockup-frame gallery-frame">
-                  <button class="overlay-nav-btn prev-btn" aria-label="Previous screenshot">‹</button>
-                  <button class="overlay-nav-btn next-btn" aria-label="Next screenshot">›</button>
-
-                  <div class="gallery-slides" id="gallery-slides">
-                    <div class="gallery-slide active" data-slide-index="0">
-                      <img src="assets/screenshots/feature-dashboard.jpg"
-                        alt="Coralist Mobile App - Master Your Reef Tank, Log & Monitor Parameters with Ease" width="764"
-                        height="1024" fetchpriority="high">
-                    </div>
-                    <div class="gallery-slide" data-slide-index="1">
-                      <img src="assets/screenshots/feature-logbook.jpg"
-                        alt="Coralist Digital Logbook - Easy & Quick Logbook, Keep a Detailed History of Your Tank"
-                        width="764" height="1024" loading="lazy">
-                    </div>
-                    <div class="gallery-slide" data-slide-index="2">
-                      <img src="assets/screenshots/feature-analyses.jpg"
-                        alt="Coralist Smart AI Analyses & Advice - Optimize Your Tank with Expert Diagnostics" width="764"
-                        height="1024" loading="lazy">
-                    </div>
+                  <div class="gallery-slide" data-slide-index="3">
+                    <img src="assets/screenshots/feature-tasks.jpg"
+                      alt="Coralist Task Scheduler - Never Miss a Dose, Automated Task Schedules & Alerts" width="764" height="1024"
+                      loading="lazy">
+                  </div>
+                  <div class="gallery-slide" data-slide-index="4">
+                    <img src="assets/screenshots/feature-assistant.jpg"
+                      alt="Coralist AI Assistant - Your 24/7 Marine Expert, Chat with Specialized AI Anytime" width="764" height="1024"
+                      loading="lazy">
                   </div>
                 </div>
+              </div>
 
-                <!-- Subtle Pagination Indicator Dots -->
-                <div class="gallery-pagination-dots" role="tablist" aria-label="App preview screens">
-                  <button class="pagination-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Slide 1: Master Your Reef Tank"></button>
-                  <button class="pagination-dot" data-index="1" role="tab" aria-selected="false" aria-label="Slide 2: Easy & Quick Logbook"></button>
-                  <button class="pagination-dot" data-index="2" role="tab" aria-selected="false" aria-label="Slide 3: Smart AI Analyses & Advice"></button>
+              <!-- Interactive Dots / Tabs below app screenshots -->
+              <div class="gallery-indicators" role="tablist" aria-label="App preview screens">
+                <div class="indicators-row">
+                  <button class="indicator-dot active" data-index="0" role="tab" aria-selected="true">Parameters</button>
+                  <button class="indicator-dot" data-index="1" role="tab" aria-selected="false">Logbook</button>
+                  <button class="indicator-dot" data-index="2" role="tab" aria-selected="false">AI Analyses &amp; Advice</button>
+                </div>
+                <div class="indicators-row">
+                  <button class="indicator-dot" data-index="3" role="tab" aria-selected="false">Tasks</button>
+                  <button class="indicator-dot" data-index="4" role="tab" aria-selected="false">AI Expert</button>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -402,8 +369,7 @@
               your water is in the sweet spot with intuitive, color-coded dials.
             </p>
             <div class="feature-card-action">
-              <button class="feature-preview-btn" data-open-screenshot="0"
-                aria-label="View Dashboard Parameters screenshot">
+              <button class="feature-preview-btn" data-open-screenshot="0" aria-label="View Dashboard Parameters screenshot">
                 <span>View Dashboard Screen</span>
                 <span class="preview-arrow" aria-hidden="true">↗</span>
               </button>
@@ -423,8 +389,7 @@
               assistant generates checklists tailored to your setup, equipment, and livestock demands.
             </p>
             <div class="feature-card-action">
-              <button class="feature-preview-btn" data-open-screenshot="3"
-                aria-label="View Smart Task Lists screenshot">
+              <button class="feature-preview-btn" data-open-screenshot="3" aria-label="View Smart Task Lists screenshot">
                 <span>View Task Scheduler Screen</span>
                 <span class="preview-arrow" aria-hidden="true">↗</span>
               </button>
@@ -447,8 +412,7 @@
               reef keeping: flattening the curve and keeping your water chemistry steady.
             </p>
             <div class="feature-card-action">
-              <button class="feature-preview-btn" data-open-screenshot="0"
-                aria-label="View Stability Index Chart screenshot">
+              <button class="feature-preview-btn" data-open-screenshot="0" aria-label="View Stability Index Chart screenshot">
                 <span>View Stability Chart</span>
                 <span class="preview-arrow" aria-hidden="true">↗</span>
               </button>
@@ -469,8 +433,7 @@
               leave things alone.
             </p>
             <div class="feature-card-action">
-              <button class="feature-preview-btn" data-open-screenshot="2"
-                aria-label="View AI Analyses and Advice screenshot">
+              <button class="feature-preview-btn" data-open-screenshot="2" aria-label="View AI Analyses and Advice screenshot">
                 <span>View Analyses &amp; Advice Screen</span>
                 <span class="preview-arrow" aria-hidden="true">↗</span>
               </button>
@@ -491,8 +454,7 @@
               or check at your local fish store whether a new fish or coral is compatible with what you already have.
             </p>
             <div class="feature-card-action">
-              <button class="feature-preview-btn" data-open-screenshot="4"
-                aria-label="View Context-Aware Assistant screenshot">
+              <button class="feature-preview-btn" data-open-screenshot="4" aria-label="View Context-Aware Assistant screenshot">
                 <span>View AI Assistant Screen</span>
                 <span class="preview-arrow" aria-hidden="true">↗</span>
               </button>
@@ -534,9 +496,7 @@
                 Only if you want to use cloud backup of your data and AI expert analyses.
               </p>
               <p>
-                You can use Coralist locally to log water parameters, track maintenance tasks, and view stability charts
-                without an account. Creating an account is only required if you want secure cloud backup across your
-                devices and access to AI expert analyses and recommendations.
+                You can use Coralist locally to log water parameters, track maintenance tasks, and view stability charts without an account. Creating an account is only required if you want secure cloud backup across your devices and access to AI expert analyses and recommendations.
               </p>
             </div>
           </details>
@@ -548,9 +508,7 @@
             </summary>
             <div class="faq-answer">
               <p>
-                Setting up Coralist for your reef tank is quick and intuitive. By logging your livestock, dosing
-                schedule, and equipment hardware upfront, the app can calculate accurate biological loads, predict
-                parameter consumption, and provide contextual AI advice:
+                Setting up Coralist for your reef tank is quick and intuitive. By logging your livestock, dosing schedule, and equipment hardware upfront, the app can calculate accurate biological loads, predict parameter consumption, and provide contextual AI advice:
               </p>
 
               <div class="faq-workflow-steps" data-walkthrough="setup">
@@ -558,13 +516,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>1</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-1-click-log.jpg"
-                      alt="Step 1: Click on Logbook in the bottom navigation" width="764" height="1024" loading="lazy">
+                    <img src="assets/screenshots/setup-step-1-click-log.jpg" alt="Step 1: Click on Logbook in the bottom navigation" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Click on Logbook</h4>
-                    <p>Tap <strong>Logbook</strong> in the bottom navigation bar to open your aquarium management hub.
-                    </p>
+                    <p>Tap <strong>Logbook</strong> in the bottom navigation bar to open your aquarium management hub.</p>
                   </div>
                 </div>
 
@@ -572,14 +528,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>2</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-2-fish-icon.jpg"
-                      alt="Step 2: Click on the Fish Icon to add your livestock" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/setup-step-2-fish-icon.jpg" alt="Step 2: Click on the Fish Icon to add your livestock" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Select Fish Icon</h4>
-                    <p>Click on the <strong>Fish Icon</strong> in the top sub-navigation to manage your aquarium
-                      livestock.</p>
+                    <p>Click on the <strong>Fish Icon</strong> in the top sub-navigation to manage your aquarium livestock.</p>
                   </div>
                 </div>
 
@@ -587,13 +540,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>3</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-3-add-livestock.jpg" alt="Step 3: Click on Add Livestock"
-                      width="764" height="1024" loading="lazy">
+                    <img src="assets/screenshots/setup-step-3-add-livestock.jpg" alt="Step 3: Click on Add Livestock" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Click on Add Livestock</h4>
-                    <p>Tap the blue <strong>+ Add Livestock</strong> button to register a new coral, fish, or
-                      invertebrate.</p>
+                    <p>Tap the blue <strong>+ Add Livestock</strong> button to register a new coral, fish, or invertebrate.</p>
                   </div>
                 </div>
 
@@ -601,9 +552,7 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>4</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-4-livestock-details.jpg"
-                      alt="Step 4: Fill the details of the livestock being added" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/setup-step-4-livestock-details.jpg" alt="Step 4: Fill the details of the livestock being added" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Fill Livestock Details</h4>
@@ -615,14 +564,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>5</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-5-doser-icon.jpg"
-                      alt="Step 5: Click on the Doser icon in the Log pane and click on Add Dosing" width="764"
-                      height="1024" loading="lazy">
+                    <img src="assets/screenshots/setup-step-5-doser-icon.jpg" alt="Step 5: Click on the Doser icon in the Log pane and click on Add Dosing" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Select Doser Icon &amp; Add Dosing</h4>
-                    <p>Click on the <strong>Doser icon</strong> in the Log pane, then tap <strong>Add Dosing</strong>.
-                    </p>
+                    <p>Click on the <strong>Doser icon</strong> in the Log pane, then tap <strong>Add Dosing</strong>.</p>
                   </div>
                 </div>
 
@@ -630,13 +576,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>6</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-6-dosing-details.jpg"
-                      alt="Step 6: Add the details of the dosing solution" width="764" height="1024" loading="lazy">
+                    <img src="assets/screenshots/setup-step-6-dosing-details.jpg" alt="Step 6: Add the details of the dosing solution" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Add Dosing Details</h4>
-                    <p>Enter your additive details (element, brand, concentration, daily volume, and dosing schedule).
-                    </p>
+                    <p>Enter your additive details (element, brand, concentration, daily volume, and dosing schedule).</p>
                   </div>
                 </div>
 
@@ -644,14 +588,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>7</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-7-hardware-add.jpg"
-                      alt="Step 7: Click on Hardware then click on Add Hardware" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/setup-step-7-hardware-add.jpg" alt="Step 7: Click on Hardware then click on Add Hardware" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Click Hardware &amp; Add Hardware</h4>
-                    <p>Click on the <strong>Hardware</strong> tab in the Log pane, then tap <strong>Add
-                        Hardware</strong>.</p>
+                    <p>Click on the <strong>Hardware</strong> tab in the Log pane, then tap <strong>Add Hardware</strong>.</p>
                   </div>
                 </div>
 
@@ -659,13 +600,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>8</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/setup-step-8-device-details.jpg"
-                      alt="Step 8: Add the details of your devices" width="764" height="1024" loading="lazy">
+                    <img src="assets/screenshots/setup-step-8-device-details.jpg" alt="Step 8: Add the details of your devices" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Add Device Details</h4>
-                    <p>Catalogue your equipment (lighting, skimmer, return pump, wavemaker) and maintenance schedules.
-                    </p>
+                    <p>Catalogue your equipment (lighting, skimmer, return pump, wavemaker) and maintenance schedules.</p>
                   </div>
                 </div>
               </div>
@@ -711,8 +650,7 @@
                     <li><strong>Silicon (Si):</strong> Dissolved silicate (0–0.2 mg/L) to monitor diatom control.</li>
                     <li><strong>Salinity:</strong> Measured in practical salinity (34–36 ppt) or Specific Gravity (SG).
                     </li>
-                    <li><strong>pH &amp; Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C
-                      /
+                    <li><strong>pH &amp; Temperature:</strong> Day/night pH balance (7.8–8.4) and thermal stability (°C /
                       °F).</li>
                   </ul>
                 </div>
@@ -785,10 +723,7 @@
             </summary>
             <div class="faq-answer">
               <p>
-                Using Coralist to analyze your water tests is fast and seamless. Simply log your latest test results,
-                and our specialized AI Agent will cross-examine your readings against historical stability trends,
-                aquarium volume, hardware configuration, and livestock demands to generate detailed diagnostics and
-                advice:
+                Using Coralist to analyze your water tests is fast and seamless. Simply log your latest test results, and our specialized AI Agent will cross-examine your readings against historical stability trends, aquarium volume, hardware configuration, and livestock demands to generate detailed diagnostics and advice:
               </p>
 
               <div class="faq-workflow-steps" data-walkthrough="water-test">
@@ -796,14 +731,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>1</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/step-1-add-record.jpg"
-                      alt="Step 1: Click on the plus button to add a new record" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/step-1-add-record.jpg" alt="Step 1: Click on the plus button to add a new record" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Click the <strong>+</strong> Button</h4>
-                    <p>Tap the dark blue <strong>+</strong> button at the bottom of the navigation bar to create a new
-                      tank record.</p>
+                    <p>Tap the dark blue <strong>+</strong> button at the bottom of the navigation bar to create a new tank record.</p>
                   </div>
                 </div>
 
@@ -811,14 +743,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>2</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/step-2-select-water-test.jpg"
-                      alt="Step 2: Select Water test from the category dropdown" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/step-2-select-water-test.jpg" alt="Step 2: Select Water test from the category dropdown" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Select "Water test"</h4>
-                    <p>In the Add Record sheet, choose <strong>Water test</strong> from the category dropdown menu to
-                      open parameter inputs.</p>
+                    <p>In the Add Record sheet, choose <strong>Water test</strong> from the category dropdown menu to open parameter inputs.</p>
                   </div>
                 </div>
 
@@ -826,13 +755,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>3</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/step-3-enter-parameters.jpg"
-                      alt="Step 3: Enter water parameters and tap Add" width="764" height="1024" loading="lazy">
+                    <img src="assets/screenshots/step-3-enter-parameters.jpg" alt="Step 3: Enter water parameters and tap Add" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Add Parameters &amp; Submit</h4>
-                    <p>Enter your test results (Alkalinity, Calcium, Magnesium, Nitrate, etc.) or upload ICP PDF
-                      results, then tap <strong>Add</strong>.</p>
+                    <p>Enter your test results (Alkalinity, Calcium, Magnesium, Nitrate, etc.) or upload ICP PDF results, then tap <strong>Add</strong>.</p>
                   </div>
                 </div>
 
@@ -840,14 +767,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>4</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/step-4-ai-agent-analyzing.jpg"
-                      alt="Step 4: AI Agent analyzes parameters against tank history and livestock" width="764"
-                      height="1024" loading="lazy">
+                    <img src="assets/screenshots/step-4-ai-agent-analyzing.jpg" alt="Step 4: AI Agent analyzes parameters against tank history and livestock" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>AI Agent Analyzes Your Tank</h4>
-                    <p>The app calls the AI Agent to analyze your readings against your historical stability, tank
-                      equipment, and coral species.</p>
+                    <p>The app calls the AI Agent to analyze your readings against your historical stability, tank equipment, and coral species.</p>
                   </div>
                 </div>
 
@@ -855,14 +779,11 @@
                 <div class="workflow-step-card">
                   <div class="step-badge"><span>Step</span> <span>5</span></div>
                   <div class="step-img-box">
-                    <img src="assets/screenshots/step-5-ai-advice-report.jpg"
-                      alt="Step 5: Receive personalized analyses and dosing advice" width="764" height="1024"
-                      loading="lazy">
+                    <img src="assets/screenshots/step-5-ai-advice-report.jpg" alt="Step 5: Receive personalized analyses and dosing advice" width="764" height="1024" loading="lazy">
                   </div>
                   <div class="step-info">
                     <h4>Receive Analyses &amp; Advice</h4>
-                    <p>Get a comprehensive diagnostic breakdown with biological impact warnings and actionable dosing
-                      recommendations.</p>
+                    <p>Get a comprehensive diagnostic breakdown with biological impact warnings and actionable dosing recommendations.</p>
                   </div>
                 </div>
               </div>
@@ -914,6 +835,8 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
         </ul>
       </nav>
 
@@ -938,31 +861,23 @@
 
       <div class="footer-bottom">
         <p>© 2026 Coralist. All rights reserved.</p>
-        <div class="footer-legal-links">
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <span class="legal-separator">•</span>
-          <a href="privacy.html">Privacy Policy</a>
-        </div>
       </div>
     </div>
   </footer>
 
   <!-- Lightbox Modal for Walkthrough and Screenshots -->
-  <div class="screenshot-lightbox" id="screenshot-lightbox" role="dialog" aria-modal="true"
-    aria-label="Enlarged screenshot preview" aria-hidden="true">
+  <div class="screenshot-lightbox" id="screenshot-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot preview" aria-hidden="true">
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-dialog">
       <div class="lightbox-top-bar">
-        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close preview"
-          title="Close (Esc)">✕</button>
+        <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close preview" title="Close (Esc)">✕</button>
       </div>
       <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev-btn" aria-label="Previous step">‹</button>
       <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next-btn" aria-label="Next step">›</button>
-
+      
       <div class="lightbox-content">
         <div class="lightbox-img-wrapper" id="lightbox-img-wrapper">
-          <img class="lightbox-image" id="lightbox-image" src="assets/screenshots/step-1-add-record.jpg"
-            alt="Water test step preview">
+          <img class="lightbox-image" id="lightbox-image" src="assets/screenshots/step-1-add-record.jpg" alt="Water test step preview">
         </div>
         <div class="lightbox-footer">
           <div class="lightbox-caption" id="lightbox-caption">Water Test Walkthrough — Step 1: Click the + Button</div>
