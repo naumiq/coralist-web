@@ -32,10 +32,11 @@
   <meta name="theme-color" content="#042c50">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=7.0">
+  <link rel="stylesheet" href="styles.css?v=8.0">
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     <div class="container nav-row">
       <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <div class="brand-icon-mask"></div>
+        <img src="assets/coral-header-light-thinned.png" alt="Coralist Logo" class="brand-icon-img" width="30" height="36">
         <span class="brand-text">Coralist</span>
       </a>
 
@@ -55,10 +56,23 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#features">Features</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+          <li><a href="index.html#beta-signup">Early Access</a></li>
         </ul>
       </nav>
+
+      <!-- Action Buttons: Download (with Coming Soon tip) + Join Early Access CTA -->
+      <div class="nav-actions">
+        <button class="btn-nav-download" disabled aria-disabled="true" title="Public App Store & Google Play release coming soon">
+          <svg class="download-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download</span>
+          <span class="tip-text-soon">(Coming Soon)</span>
+        </button>
+        <a href="index.html#beta-signup" class="btn-nav-beta">Join Early Access</a>
+      </div>
 
       <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-bar"></span>
@@ -75,7 +89,7 @@
       <section class="legal-header">
         <h1>Privacy Policy</h1>
         <p>
-          <strong>Last Updated:</strong> 12 October 2026
+          <strong>Last Updated:</strong> 17 October 2026
         </p>
       </section>
 
@@ -117,8 +131,8 @@
             <tbody>
               <tr>
                 <td><strong>Account Information</strong></td>
-                <td>Email address, full name, and avatar when registering a Coralist account; OAuth tokens from Google or Apple Sign-In; securely hashed credentials for email accounts</td>
-                <td><strong>(b) Contractual necessity</strong> — required to create and operate your account</td>
+                <td>Email address, profile nickname (or full name), and optional avatar when registering a Coralist account; one-time password (OTP) verification codes; OAuth tokens from Google or Apple Sign-In; securely hashed credentials for authentication</td>
+                <td><strong>(b) Contractual necessity</strong> — required to create, verify, and operate your account</td>
               </tr>
               <tr>
                 <td><strong>Aquarium Telemetry</strong></td>
@@ -170,7 +184,7 @@
           <h2>2. How We Use Your Information</h2>
           <p>We use the collected information for the following purposes:</p>
           <ul>
-            <li>To create, manage, and secure your account.</li>
+            <li>To create, verify, manage, and secure your account (including dispatching passwordless one-time sign-in codes to your email address and displaying your chosen nickname across the App interface).</li>
             <li>To provide core features, including charting water parameters and reminding you of maintenance tasks.
             </li>
             <li>To generate personalized AI-driven insights (see Section 3).</li>

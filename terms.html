@@ -32,10 +32,11 @@
   <meta name="theme-color" content="#042c50">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=7.0">
+  <link rel="stylesheet" href="styles.css?v=8.0">
 </head>
 
 <body>
@@ -45,7 +46,7 @@
     <div class="container nav-row">
       <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <div class="brand-icon-mask"></div>
+        <img src="assets/coral-header-light-thinned.png" alt="Coralist Logo" class="brand-icon-img" width="30" height="36">
         <span class="brand-text">Coralist</span>
       </a>
 
@@ -55,10 +56,23 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="index.html#features">Features</a></li>
           <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="terms.html" class="active">Terms & Conditions</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="index.html#beta-signup">Early Access</a></li>
         </ul>
       </nav>
+
+      <!-- Action Buttons: Download (with Coming Soon tip) + Join Early Access CTA -->
+      <div class="nav-actions">
+        <button class="btn-nav-download" disabled aria-disabled="true" title="Public App Store & Google Play release coming soon">
+          <svg class="download-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download</span>
+          <span class="tip-text-soon">(Coming Soon)</span>
+        </button>
+        <a href="index.html#beta-signup" class="btn-nav-beta">Join Early Access</a>
+      </div>
 
       <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-bar"></span>

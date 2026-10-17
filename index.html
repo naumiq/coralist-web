@@ -38,10 +38,11 @@
   <meta name="theme-color" content="#042c50">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" href="assets/logo-premium-clean.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=7.2">
+  <link rel="stylesheet" href="styles.css?v=8.0">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -168,7 +169,7 @@
     <div class="container nav-row">
       <!-- Left: Logo with Coralist centered underneath -->
       <a href="index.html" class="brand-link" aria-label="Coralist Home">
-        <div class="brand-icon-mask"></div>
+        <img src="assets/coral-header-light-thinned.png" alt="Coralist Logo" class="brand-icon-img" width="30" height="36">
         <span class="brand-text">Coralist</span>
       </a>
 
@@ -178,10 +179,23 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="terms.html">Terms & Conditions</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#beta-signup">Early Access</a></li>
         </ul>
       </nav>
+
+      <!-- Action Buttons: Download (with Coming Soon tip) + Join Early Access CTA -->
+      <div class="nav-actions">
+        <button class="btn-nav-download" disabled aria-disabled="true" title="Public App Store & Google Play release coming soon">
+          <svg class="download-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download</span>
+          <span class="tip-text-soon">(Coming Soon)</span>
+        </button>
+        <a href="#beta-signup" class="btn-nav-beta">Join Early Access</a>
+      </div>
 
       <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-bar"></span>
@@ -199,14 +213,12 @@
         <div class="showcase-card">
           <div class="showcase-header">
             <h1>Your Personal Reef Tank Expert</h1>
+            <p class="hero-tagline">AI-powered stability tracking, smart digital logbook, and targeted water chemistry guidance for saltwater aquariums.</p>
           </div>
 
           <div class="showcase-text-col">
-            <p>
-              Built by a reef keeper to simplify testing, logging, and keeping water
-              parameters steady. Coralist connects your test results, dosing routines, hardware setup, and livestock
-              in one clear view for your saltwater aquarium. All of this feeds into an AI agent that identifies
-              patterns, spots emerging problems, and proposes practical advice tailored to your system.
+            <p class="hero-lead-text">
+              Built by an experienced reef keeper to simplify water testing, logging, and keeping parameters steady. Coralist connects your test results, dosing regimens, hardware setup, and livestock in one unified dashboard—empowered by an AI agent that spots emerging problems and proposes practical advice tailored to your system.
             </p>
 
             <ul class="feature-list">
@@ -251,13 +263,14 @@
               </li>
             </ul>
 
-            <div class="btn-group" style="margin-top: 10px;">
-              <a href="#beta-signup"
-                class="btn btn-primary">
-                <span>Apply for Beta Access</span>
-                <span style="font-size: 1.1em; line-height: 1;">→</span>
-              </a>
-              <a href="#features" class="btn btn-secondary">Explore Features</a>
+            <div class="hero-cta-group">
+              <div class="btn-group">
+                <a href="#beta-signup" class="btn btn-primary btn-cta">
+                  <span>Join Early Access</span>
+                  <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#features" class="btn btn-secondary">Explore Features</a>
+              </div>
             </div>
           </div>
 
@@ -812,14 +825,16 @@
       <!-- Bottom Invitation Notice Box -->
       <section class="notice-section">
         <div class="notice-box" id="beta-signup" style="margin-top: 50px;">
-          <h4>Interested in trying Coralist?</h4>
+          <h4>Interested in testing Coralist?</h4>
           <p>
-            We're in the final stretch of our closed beta testing phase. If you'd like early access and are willing to
-            share feedback on how Coralist fits your routine, we'd love to hear from you.
+            We are in the final stretch of our closed testing phase on iOS (TestFlight) and Android. If you would like early access and are willing to share feedback on how Coralist fits your reefkeeping routine, we would love to welcome you aboard.
           </p>
-          <div class="btn-group" style="justify-content: center; margin-top: 18px;">
-            <a href="mailto:contact@coralist.app?subject=Coralist%20Closed%20Beta%20Feedback%20%26%20Testing&body=Hi%20Coralist%20Team,%0A%0AI'd%20like%20to%20test%20Coralist%20and%20share%20feedback.%0A%0AMy%20Platform%20(iOS%20/%20Android):%20%0AMy%20Aquarium%20Setup:%20%0A%0AThank%20you!"
-              class="btn btn-secondary">Contact Us</a>
+          <div class="btn-group" style="justify-content: center; margin-top: 20px;">
+            <a href="mailto:contact@coralist.app?subject=Coralist%20Early%20Access%20Feedback%20%26%20Testing&body=Hi%20Coralist%20Team,%0A%0AI'd%20like%20to%20test%20Coralist%20early%20and%20share%20feedback.%0A%0AMy%20Platform%20(iOS%20/%20Android):%20%0AMy%20Aquarium%20Setup:%20%0A%0AThank%20you!"
+              class="btn btn-primary btn-cta">
+              <span>Join Early Access</span>
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </section>
