@@ -103,19 +103,6 @@
             Coralist mobile application (the "App").
           </p>
 
-          <div class="legal-callout">
-            <p>
-              <strong>Data Controller:</strong><br>
-              Naumiq<br>
-              sole proprietorship<br>
-              Conradstraat 8<br>
-              1505KA Zaandam<br>
-              The Netherlands<br>
-              KvK: 42159130<br>
-              Email: <a href="mailto:contact@coralist.app" style="color: var(--navy-primary); font-weight: 700; text-decoration: underline;">contact@coralist.app</a>
-            </p>
-          </div>
-
           <h2>1. Information We Collect and Legal Basis</h2>
           <p>
             We process your personal data only when we have a valid legal basis under GDPR Art. 6(1). The table below
@@ -145,6 +132,11 @@
                 <td><strong>AI Interaction Data</strong></td>
                 <td>Anonymized prompts sent to Google Gemini; AI-generated responses</td>
                 <td><strong>(b) Contractual necessity</strong> — to deliver the AI analysis features you request</td>
+              </tr>
+              <tr>
+                <td><strong>Uploaded Lab Documents &amp; Reports</strong></td>
+                <td>User-uploaded ICP water analysis reports (PDFs) submitted for automated parameter extraction and OCR</td>
+                <td><strong>(b) Contractual necessity</strong> — to extract and log your water parameters at your request</td>
               </tr>
               <tr>
                 <td><strong>Flagged AI Responses</strong></td>
@@ -203,8 +195,11 @@
             <li>
               <strong>Anonymized Data Transmission:</strong> When you request an AI analysis, we transmit non-personally
               identifiable aquarium data (water parameters, livestock types, equipment inventory, and your optional
-              notes) to the Google Gemini API. Your personal information (name, email, account ID) is
+              notes) to the Google Gemini API. Your personal account information (name, email, account ID) is
               <strong>never</strong> included in AI prompts.
+            </li>
+            <li>
+              <strong>ICP Lab Document &amp; PDF Extraction:</strong> When you choose to upload a water testing report or ICP PDF, the document is transmitted securely to the Google Gemini API solely for the purpose of document comprehension and optical character recognition (OCR) to extract measured water parameters into your logbook. Coralist prompts the model strictly to extract chemical readings and does not parse, index, or store personal names, customer addresses, or contact information that may be printed on third-party laboratory sheets. Documents processed via the API are handled ephemerally and are not retained on our servers.
             </li>
             <li>
               <strong>AI Response Flagging:</strong> If you flag an AI response as inaccurate, the conversation history
@@ -212,11 +207,11 @@
               quality and safety.
             </li>
             <li>
-              <strong>No Model Training:</strong> We access Google Gemini via its paid API tier, which is governed by
+              <strong>No Model Training:</strong> We access Google Gemini via its paid enterprise API tier, which is governed by
               the <a href="https://cloud.google.com/terms" target="_blank" rel="noopener noreferrer">Google Cloud
                 Platform Terms of Service</a> and the <a href="https://policies.google.com/terms/generative-ai"
                 target="_blank" rel="noopener noreferrer">Generative AI Prohibited Use Policy</a>. Under these terms,
-              data submitted via the API is <strong>not</strong> used to train or improve Google's foundation models.
+              data and files submitted via the API are <strong>not</strong> used to train or improve Google's foundation models.
             </li>
           </ul>
 
@@ -242,8 +237,8 @@
               </tr>
               <tr>
                 <td><strong>Google Cloud (Gemini API)</strong></td>
-                <td>AI inference</td>
-                <td>Anonymized aquarium data (no PII)</td>
+                <td>AI inference &amp; document parameter extraction</td>
+                <td>Anonymized aquarium telemetry and user-submitted lab reports (PDFs) for parameter extraction (no data retained for AI model training)</td>
                 <td>EU/US (Google Cloud regions)</td>
                 <td>EU–US Data Privacy Framework; SCCs</td>
               </tr>
@@ -277,8 +272,7 @@
             <li><strong>RevenueCat:</strong> Manages our in-app purchases and subscriptions. When you make a purchase,
               RevenueCat receives anonymous app user IDs to validate subscription status. Payment processing is handled
               entirely by Apple or Google; we do not collect or store credit card information.</li>
-            <li><strong>Google Cloud (Gemini):</strong> Processes anonymized aquarium data for AI features as described
-              in Section 3.</li>
+            <li><strong>Google Cloud (Gemini):</strong> Processes anonymized aquarium data for AI features and parses user-submitted ICP lab documents (PDFs) for parameter extraction as described in Section 3.</li>
           </ul>
 
           <h2>5. Data Retention and Deletion</h2>
@@ -398,14 +392,20 @@
             acceptance of the revised policy.
           </p>
 
-          <h2>9. Contact Us</h2>
-          <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:
+          <h2>9. Data Controller &amp; Contact Us</h2>
+          <p>If you have questions or concerns about this Privacy Policy, your personal data, or our data practices, please contact the Data Controller:
           </p>
           <div class="legal-callout">
             <p>
-              <strong>Email:</strong> <a href="mailto:contact@coralist.app" style="color: var(--navy-primary); font-weight: 700; text-decoration: underline;">contact@coralist.app</a><br>
-              <strong>WhatsApp Support:</strong> <a href="https://wa.me/message/F6IHO37MQ43EN1" target="_blank" rel="noopener noreferrer" style="color: var(--navy-primary); font-weight: 700; text-decoration: underline;">Chat on WhatsApp</a><br>
-              <strong>Data Controller:</strong> Naumiq, Conradstraat 8, 1505KA Zaandam, The Netherlands (KvK: 42159130)
+              <strong>Data Controller:</strong><br>
+              Naumiq<br>
+              sole proprietorship<br>
+              Conradstraat 8<br>
+              1505KA Zaandam<br>
+              The Netherlands<br>
+              KvK: 42159130<br>
+              Email: <a href="mailto:contact@coralist.app" style="color: var(--navy-primary); font-weight: 700; text-decoration: underline;">contact@coralist.app</a><br>
+              WhatsApp Support: <a href="https://wa.me/message/F6IHO37MQ43EN1" target="_blank" rel="noopener noreferrer" style="color: var(--navy-primary); font-weight: 700; text-decoration: underline;">Chat on WhatsApp</a>
             </p>
           </div>
 
