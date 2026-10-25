@@ -45,7 +45,7 @@
   <link rel="icon" type="image/png" href="assets/coral-header-dark-thinned.png" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="assets/coral-header-light-thinned.png" media="(prefers-color-scheme: light)">
   <link rel="apple-touch-icon" href="assets/coral-silhouette.png">
-  <link rel="stylesheet" href="styles.css?v=8.0">
+  <link rel="stylesheet" href="styles.css?v=9.0">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -56,7 +56,8 @@
         "@type": "SoftwareApplication",
         "name": "Coralist",
         "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "iOS, Android",
+        "operatingSystem": "Android (Available now), iOS (Coming soon)",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.naumiq.coralist&pcampaignid=web_share",
         "description": "Smart digital logbook and water chemistry companion for reef tank, marine aquarium, and sea aquarium keepers. Track alkalinity, calcium, nitrate, phosphate, and stability trends with context-aware AI analysis.",
         "url": "https://coralist.app/",
         "image": "https://coralist.app/assets/screenshots/feature-dashboard.jpg",
@@ -65,7 +66,7 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/PreOrder"
+          "availability": "https://schema.org/InStock"
         }
       },
       {
@@ -88,10 +89,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Which platforms will Coralist be available on?",
+            "name": "Which platforms is Coralist available on?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Coralist is built natively for both iOS (iPhone) and Android mobile devices."
+              "text": "Coralist is officially available now on Android via Google Play, and is coming soon to iOS (iPhone & iPad). iOS users can join our early access closed beta via Apple TestFlight."
             }
           },
           {
@@ -190,26 +191,11 @@
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#features">Features</a></li>
+          <li><a href="#download">Download</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#beta-signup">Early Access</a></li>
         </ul>
       </nav>
 
-      <!-- Action Buttons: Download (with Coming Soon tip) + Join Early Access CTA -->
-      <div class="nav-actions">
-        <button class="btn-nav-download" disabled aria-disabled="true"
-          title="Public App Store & Google Play release coming soon">
-          <svg class="download-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor"
-            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span>Download</span>
-          <span class="tip-text-soon">(Coming Soon)</span>
-        </button>
-        <a href="#beta-signup" class="btn-nav-beta">Join Early Access</a>
-      </div>
 
       <button class="mobile-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-bar"></span>
@@ -287,12 +273,35 @@
             </ul>
 
             <div class="hero-cta-group">
-              <div class="btn-group">
-                <a href="#beta-signup" class="btn btn-primary btn-cta">
-                  <span>Join Early Access</span>
+              <div class="btn-group hero-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.naumiq.coralist&pcampaignid=web_share"
+                  target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cta btn-store-hero"
+                  id="hero-play-store-btn" title="Download Coralist on Google Play">
+                  <svg class="play-svg" viewBox="0 0 512 512" width="18" height="18" aria-hidden="true">
+                    <path fill="#4285F4"
+                      d="M47.7 24.5C40.6 32 36.6 43.6 36.6 58.7v394.6c0 15.1 4 26.7 11.1 34.2l1.9 1.8 221-221v-4.6L49.6 22.7l-1.9 1.8z" />
+                    <path fill="#FBBC04"
+                      d="M344.2 337.3l-73.6-73.6v-4.6l73.6-73.6 1.8 1 87.2 49.5c24.9 14.1 24.9 37.3 0 51.5l-87.2 49.5-1.8.8z" />
+                    <path fill="#EA4335" d="M346 336.5L270.6 261 49.6 482c8.2 8.7 21.8 9.8 37 1.2l259.4-146.7z" />
+                    <path fill="#34A853" d="M346 175.5L86.6 28.8c-15.2-8.6-28.8-7.5-37 1.2L270.6 251 346 175.5z" />
+                  </svg>
+                  <span>Google Play</span>
                   <span class="btn-arrow" aria-hidden="true">→</span>
                 </a>
-                <a href="#features" class="btn btn-secondary">Explore Features</a>
+                <div class="hero-btn-wrapper">
+                  <a href="#download" class="btn btn-primary btn-cta btn-store-hero btn-store-disabled"
+                    id="hero-apple-store-btn" aria-disabled="true" tabindex="-1"
+                    title="Coralist on the App Store (In review, coming soon)">
+                    <svg viewBox="0 0 384 512" width="16" height="18" fill="currentColor" aria-hidden="true">
+                      <path
+                        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9m-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3" />
+                    </svg>
+                    <span>App Store</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                  </a>
+                  <span class="hero-btn-note">In review • Coming soon</span>
+                </div>
+
               </div>
             </div>
           </div>
@@ -518,13 +527,22 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary class="faq-question">
-              <span>Which platforms will Coralist be available on?</span>
+              <span>Which platforms is Coralist available on?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
               <p>
-                Coralist is built natively for both iOS (iPhone) and Android mobile devices. We are currently conducting
-                our closed beta testing phase.
+                <strong>Coralist is officially available now on Android via Google Play!</strong> You can download it
+                directly to your Android phone or tablet to start logging tests, tracking stability, and receiving AI
+                advice immediately.
+              </p>
+              <p>
+                The <strong>iOS version (iPhone &amp; iPad)</strong> is currently in active closed beta testing via
+                Apple TestFlight and will launch publicly on the Apple App Store very soon. If you use an iPhone and
+                would like early access, you can request a TestFlight invite directly on our <a href="#download"
+                  style="color: var(--navy-primary); font-weight: 600; text-decoration: underline;">Download section</a>
+                or by emailing <a href="mailto:contact@coralist.app"
+                  style="color: var(--navy-primary); font-weight: 600; text-decoration: underline;">contact@coralist.app</a>.
               </p>
             </div>
           </details>
@@ -997,20 +1015,45 @@
       </section>
 
       <!-- Bottom Invitation Notice Box -->
-      <section class="notice-section">
+      <section class="notice-section" id="download">
         <div class="notice-box" id="beta-signup" style="margin-top: 50px;">
-          <h4>Interested in testing Coralist?</h4>
+
+          <h4>Ready to Try Coralist?</h4>
           <p>
-            We are in the final stretch of our closed testing phase on iOS (TestFlight) and Android. If you would like
-            early access and are willing to share feedback on how Coralist fits your reefkeeping routine, we would love
-            to welcome you aboard.
+            Coralist is officially approved and available now on Android via Google Play!
+            <br>
+            <br>
+            The iOS version is currently in final review at Apple and will soon be available for download on the App
+            Store.
           </p>
-          <div class="btn-group" style="justify-content: center; margin-top: 20px;">
-            <a href="mailto:contact@coralist.app?subject=Coralist%20Early%20Access%20Feedback%20%26%20Testing&body=Hi%20Coralist%20Team,%0A%0AI'd%20like%20to%20test%20Coralist%20early%20and%20share%20feedback.%0A%0AMy%20Platform%20(iOS%20/%20Android):%20%0AMy%20Aquarium%20Setup:%20%0A%0AThank%20you!"
-              class="btn btn-primary btn-cta">
-              <span>Join Early Access</span>
+          <div class="btn-group"
+            style="justify-content: center; align-items: flex-start; margin-top: 20px; gap: 12px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.naumiq.coralist&pcampaignid=web_share"
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-cta btn-store-hero"
+              title="Download Coralist on Google Play">
+              <svg class="play-svg" viewBox="0 0 512 512" width="18" height="18" aria-hidden="true">
+                <path fill="#4285F4"
+                  d="M47.7 24.5C40.6 32 36.6 43.6 36.6 58.7v394.6c0 15.1 4 26.7 11.1 34.2l1.9 1.8 221-221v-4.6L49.6 22.7l-1.9 1.8z" />
+                <path fill="#FBBC04"
+                  d="M344.2 337.3l-73.6-73.6v-4.6l73.6-73.6 1.8 1 87.2 49.5c24.9 14.1 24.9 37.3 0 51.5l-87.2 49.5-1.8.8z" />
+                <path fill="#EA4335" d="M346 336.5L270.6 261 49.6 482c8.2 8.7 21.8 9.8 37 1.2l259.4-146.7z" />
+                <path fill="#34A853" d="M346 175.5L86.6 28.8c-15.2-8.6-28.8-7.5-37 1.2L270.6 251 346 175.5z" />
+              </svg>
+              <span>Google Play</span>
               <span class="btn-arrow" aria-hidden="true">→</span>
             </a>
+            <div class="hero-btn-wrapper">
+              <a href="#beta-signup" class="btn btn-primary btn-cta btn-store-hero btn-store-disabled"
+                aria-disabled="true" tabindex="-1" title="Coralist on the App Store (In review, coming soon)">
+                <svg viewBox="0 0 384 512" width="16" height="18" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9m-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3" />
+                </svg>
+                <span>App Store</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <span class="hero-btn-note">In review • Coming soon</span>
+            </div>
           </div>
         </div>
       </section>
@@ -1045,10 +1088,7 @@
               <span>Chat on WhatsApp</span>
             </a>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
-            Looking for dedicated App Store support? Visit our <a href="support.html"
-              style="color: var(--navy-primary); font-weight: 600; text-decoration: underline;">Support Page</a>.
-          </p>
+
         </div>
       </section>
 
@@ -1062,6 +1102,7 @@
         <ul class="footer-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="#features">Features</a></li>
+          <li><a href="#download">Download</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="support.html">Support</a></li>
           <li><a href="terms.html">Terms & Conditions</a></li>

@@ -244,21 +244,25 @@ section[id] {
   font-family: var(--font-brand);
   font-size: 0.82rem;
   font-weight: 600;
-  cursor: not-allowed;
+  text-decoration: none;
+  cursor: pointer;
   user-select: none;
   position: relative;
   transition: all 0.2s ease;
-  opacity: 0.88;
+  box-shadow: 0 1px 3px rgba(4, 44, 80, 0.04);
 }
 
 .btn-nav-download:hover {
   background: var(--navy-subtle);
-  border-color: var(--navy-border-subtle);
+  border-color: var(--navy-primary);
+  color: var(--navy-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(4, 44, 80, 0.08);
 }
 
 .download-icon {
   color: var(--navy-primary);
-  opacity: 0.75;
+  opacity: 0.85;
   flex-shrink: 0;
 }
 
@@ -267,6 +271,17 @@ section[id] {
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0;
+}
+
+.tip-badge-live {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #047857;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .mobile-toggle-btn {
@@ -504,6 +519,26 @@ main {
   box-shadow: 0 6px 20px rgba(4, 44, 80, 0.28);
 }
 
+.btn-secondary.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.92rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  color: var(--navy-primary);
+  border: 1.5px solid var(--navy-border-subtle);
+  box-shadow: 0 4px 14px rgba(4, 44, 80, 0.08);
+}
+
+.btn-secondary.btn-cta:hover {
+  transform: translateY(-1px);
+  border-color: var(--navy-primary);
+  background-color: var(--navy-subtle);
+  box-shadow: 0 6px 20px rgba(4, 44, 80, 0.14);
+}
+
 .btn-arrow {
   display: inline-block;
   font-size: 1.1em;
@@ -511,7 +546,8 @@ main {
   transition: transform 0.2s ease;
 }
 
-.btn-primary.btn-cta:hover .btn-arrow {
+.btn-primary.btn-cta:hover .btn-arrow,
+.btn-secondary.btn-cta:hover .btn-arrow {
   transform: translateX(3px);
 }
 
@@ -1084,6 +1120,631 @@ main {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Download Section & Store Badges
+   ========================================================================== */
+.download-section {
+  padding: 40px 0 80px;
+  position: relative;
+}
+
+.download-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: var(--navy-subtle);
+  border: 1px solid var(--navy-border-subtle);
+  color: var(--navy-primary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-eyebrow .eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--navy-primary);
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 10px;
+  margin-bottom: 36px;
+}
+
+.download-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.download-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-float);
+  border-color: var(--navy-border-subtle);
+}
+
+/* Featured Android Card Styling */
+.download-card-android.download-card-highlight {
+  border: 1.5px solid rgba(4, 44, 80, 0.16);
+  background: linear-gradient(180deg, rgba(240, 244, 248, 0.55) 0%, rgba(255, 255, 255, 1) 160px);
+  box-shadow: 0 10px 28px -4px rgba(4, 44, 80, 0.08), 0 2px 8px -1px rgba(4, 44, 80, 0.03);
+}
+
+.download-card-android.download-card-highlight:hover {
+  border-color: var(--navy-primary);
+  box-shadow: 0 20px 42px -8px rgba(4, 44, 80, 0.16), 0 4px 12px -2px rgba(4, 44, 80, 0.06);
+}
+
+.card-status-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.card-status-badge.badge-live {
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  color: #047857;
+}
+
+.card-status-badge.badge-soon {
+  background: rgba(4, 44, 80, 0.06);
+  border: 1px solid var(--navy-border-subtle);
+  color: var(--navy-primary);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.download-card-body {
+  padding: 32px 30px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.platform-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.platform-icon-wrap.android-icon-wrap {
+  background: #eaf7ee;
+  color: #1b5e20;
+  border: 1px solid rgba(46, 125, 50, 0.15);
+}
+
+.platform-icon-wrap.ios-icon-wrap {
+  background: var(--navy-subtle);
+  color: var(--navy-primary);
+  border: 1px solid var(--navy-border-subtle);
+}
+
+.platform-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.platform-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-primary);
+  line-height: 1.2;
+}
+
+.platform-subtitle {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.platform-description {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.download-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.download-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.feature-check-icon {
+  width: 17px;
+  height: 17px;
+  color: #059669;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.download-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Store Badge Buttons */
+.btn-store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: var(--font-brand);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-store-badge.btn-google-play {
+  background: var(--navy-primary);
+  color: #ffffff;
+  border: 1.5px solid var(--navy-primary);
+  box-shadow: 0 4px 14px rgba(4, 44, 80, 0.18);
+}
+
+.btn-store-badge.btn-google-play:hover {
+  background: var(--navy-hover);
+  border-color: var(--navy-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(4, 44, 80, 0.28);
+}
+
+.btn-store-badge.btn-google-play:active {
+  transform: translateY(0);
+}
+
+.store-badge-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.store-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.store-badge-sub {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.store-badge-main {
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.btn-store-badge .external-arrow {
+  margin-left: auto;
+  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-store-badge.btn-google-play:hover .external-arrow {
+  opacity: 1;
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* App Store (Coming Soon) Style */
+.btn-store-badge.btn-app-store.disabled-store {
+  background: #f4f6f9;
+  border: 1.5px solid var(--border-medium);
+  color: var(--navy-primary);
+  cursor: default;
+  opacity: 0.92;
+}
+
+.btn-store-badge.btn-app-store .badge-lock {
+  margin-left: auto;
+  font-size: 0.70rem;
+  font-weight: 700;
+  background: rgba(4, 44, 80, 0.08);
+  color: var(--navy-primary);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* TestFlight Beta Button */
+.btn-testflight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #ffffff;
+  color: var(--navy-primary);
+  border: 1.5px solid var(--navy-primary);
+  transition: all 0.2s ease;
+  font-family: var(--font-brand);
+}
+
+.btn-testflight:hover {
+  background: var(--navy-subtle);
+  border-color: var(--navy-hover);
+  color: var(--navy-hover);
+  transform: translateY(-1px);
+}
+
+/* QR Code Showcase Box (Larger & Prominent) */
+.download-qr-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
+  background: #f8fafc;
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  margin: 18px 0 20px;
+  gap: 14px;
+  min-height: 270px;
+}
+
+.download-qr-frame {
+  width: 196px;
+  height: 196px;
+  background: #ffffff;
+  border: 1px solid rgba(4, 44, 80, 0.08);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(4, 44, 80, 0.06);
+}
+
+.download-qr-frame .qr-code-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.download-qr-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.download-qr-caption strong {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+}
+
+.download-qr-caption span {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Symmetrical Download Plates */
+.download-plate {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #ffffff;
+  border: 1px solid rgba(4, 44, 80, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 12px 32px -4px rgba(4, 44, 80, 0.06), 0 2px 6px -1px rgba(4, 44, 80, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.download-plate:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -6px rgba(4, 44, 80, 0.12);
+  border-color: rgba(4, 44, 80, 0.18);
+}
+
+.download-plate-body {
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.download-plate-body .platform-header {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.download-plate-body .download-qr-showcase {
+  width: 100%;
+  margin: 16px 0 22px;
+  min-height: auto;
+}
+
+.download-plate-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.download-plate-actions .btn-store-hero {
+  min-width: 180px;
+  justify-content: center;
+}
+
+/* iOS Showcase Box (Matching Visual Height & Style) */
+.download-ios-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
+  background: #f8fafc;
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
+  margin: 18px 0 20px;
+  gap: 14px;
+  min-height: 270px;
+}
+
+.testflight-badge-visual {
+  width: 60px;
+  height: 60px;
+  background: rgba(4, 44, 80, 0.05);
+  border: 1px solid var(--navy-border-subtle);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-primary);
+}
+
+.download-ios-showcase p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 290px;
+}
+
+/* Cross-Platform Bar */
+.download-cross-platform-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.cross-platform-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.cross-platform-item svg {
+  color: var(--navy-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cross-platform-item strong {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--navy-primary);
+  margin-bottom: 2px;
+}
+
+.cross-platform-item span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .download-cross-platform-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Hero Section Store Enhancements & Platform Chips */
+.hero-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-store-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-btn-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-store-hero.btn-store-disabled {
+  background-color: #94a3b8;
+  border-color: #94a3b8;
+  color: #ffffff;
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.hero-btn-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.hero-platform-chips {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.platform-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.platform-chip.chip-android {
+  background: #eaf7ee;
+  border-color: rgba(46, 125, 50, 0.22);
+  color: #1b5e20;
+}
+
+.platform-chip.chip-ios {
+  background: var(--navy-subtle);
+  border-color: var(--navy-border-subtle);
+  color: var(--navy-primary);
+}
+
+.chip-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chip-status-dot.live {
+  background: #10b981;
+}
+
+.chip-status-dot.soon {
+  background: var(--navy-hover);
+}
+
+.notice-badge-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--navy-subtle);
+  color: var(--navy-primary);
+  margin-bottom: 12px;
 }
 
 /* ==========================================================================
@@ -1862,10 +2523,38 @@ main {
   .features-grid-trio {
     grid-template-columns: repeat(2, 1fr);
   }
+  .download-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 22px;
+  }
 }
 
 /* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
+  .download-qr-showcase,
+  .download-ios-showcase {
+    min-height: auto;
+    padding: 18px 14px;
+    margin: 14px 0 18px;
+  }
+
+  .download-qr-frame {
+    width: 170px;
+    height: 170px;
+  }
+
+  .download-card-body {
+    padding: 24px 20px 20px;
+  }
+
+  .card-status-badge {
+    top: 16px;
+    right: 16px;
+  }
+
   html {
     scroll-padding-top: 86px;
   }
