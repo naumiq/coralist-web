@@ -280,8 +280,8 @@
             required by law.</p>
           <ul>
             <li><strong>Active account data:</strong> Retained for the duration of your account.</li>
-            <li><strong>Usage and rate-limit logs:</strong> Retained for the current calendar month plus one rolling
-              month, then automatically purged.</li>
+            <li><strong>Telemetry & Usage Analytics:</strong> Anonymous usage analytics (such as feature interaction counters, platform type, and day-of-week activity) and de-identified subscription transition events are retained on a rolling 12-month window for capacity planning and app improvement. These logs contain no personal photos, conversation content, or aquarium chemistry, and are automatically de-identified upon account deletion.</li>
+            <li><strong>Usage and rate-limit logs:</strong> High-frequency rate-limiting timestamps are retained for the current calendar month plus one rolling month, then automatically purged.</li>
             <li><strong>Flagged AI responses:</strong> Retained for up to 12 months for AI quality monitoring, then
               deleted.</li>
             <li><strong>Backup copies:</strong> Supabase automated backups are retained for up to 7 days and are
@@ -302,9 +302,7 @@
               excluded from all active queries via Row-Level Security policies.</li>
             <li><strong>30-day grace period:</strong> You may restore your account during this window by logging back in
               and selecting "Restore Account."</li>
-            <li><strong>After 30 days:</strong> An automated nightly process permanently and irreversibly deletes your
-              account and all associated data (aquarium records, logs, livestock, equipment, AI interaction history)
-              from all active databases, including the Coralist user authentication record.</li>
+            <li><strong>After 30 days:</strong> An automated nightly process permanently deletes your personal account data across all active databases, while any historical analytics events are irreversibly pseudonymized into random identifiers.</li>
           </ul>
 
           <div class="legal-callout">
