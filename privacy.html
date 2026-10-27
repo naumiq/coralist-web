@@ -200,7 +200,9 @@
               <strong>never</strong> included in AI prompts.
             </li>
             <li>
-              <strong>ICP Lab Document &amp; PDF Extraction:</strong> When you choose to upload a water testing report or ICP PDF, the document is transmitted securely to the Google Gemini API solely for the purpose of document comprehension and optical character recognition (OCR) to extract measured water parameters into your logbook. Coralist prompts the model strictly to extract chemical readings and does not parse, index, or store personal names, customer addresses, or contact information that may be printed on third-party laboratory sheets. Documents processed via the API are handled ephemerally and are not retained on our servers.
+              <strong>ICP Lab Document &amp; PDF Extraction (Personal Data Handling):</strong> When you choose to upload a water testing report or ICP PDF (e.g. from Triton, ATI, Fauna Marin), the document is transmitted securely to Google Gemini solely for document comprehension and optical character recognition (OCR) to extract measured water chemistry parameters into your logbook. 
+              <br><br>
+              <strong>Personal Details on Lab Reports:</strong> Third-party lab documents often display customer names, laboratory sample identifiers, postal addresses, or email addresses. Coralist prompts the model strictly to extract numeric water parameters and does not capture, parse, index, or store any personal details printed on the document. The uploaded PDF file is processed ephemerally in-memory, is never stored on our database or file servers, and is permanently discarded immediately following parameter extraction. You may also redact or crop personal details from the document prior to upload if you prefer.
             </li>
             <li>
               <strong>AI Response Flagging:</strong> If you flag an AI response as inaccurate, the conversation history
