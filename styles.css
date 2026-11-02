@@ -1122,6 +1122,41 @@ main {
   margin-bottom: 20px;
 }
 
+.notice-box .notice-buttons {
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.support-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px 24px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.support-contact-link {
+  color: var(--navy-primary);
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.support-contact-link svg {
+  flex-shrink: 0;
+}
+
+.support-contact-sep {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
 /* ==========================================================================
    Download Section & Store Badges
    ========================================================================== */
@@ -1660,7 +1695,9 @@ main {
 .btn-store-hero {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  min-inline-size: 208px;
 }
 
 .hero-btn-wrapper {
@@ -2424,6 +2461,7 @@ main {
   gap: 32px;
   list-style: none;
   flex-wrap: wrap;
+  flex-wrap: balance;
 }
 
 .footer-links a {
@@ -2461,8 +2499,10 @@ main {
 .social-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 8px 16px;
+  min-inline-size: 164px;
   border-radius: 9999px;
   background: var(--navy-subtle);
   border: 1px solid var(--navy-border-subtle);
@@ -2848,15 +2888,24 @@ main {
     margin-top: 4px;
   }
 
-  .btn-group {
-    width: 100%;
+  .btn-group,
+  .hero-buttons {
+    inline-size: 100%;
     flex-direction: column;
+    align-items: stretch;
     gap: 10px;
     margin-top: 0 !important;
   }
 
+  .btn-group .hero-btn-wrapper {
+    display: flex;
+    inline-size: 100%;
+    align-items: stretch;
+  }
+
   .btn-group .btn {
-    width: 100%;
+    inline-size: 100%;
+    min-inline-size: 0;
     justify-content: center;
     padding: 13px 20px;
     font-size: 0.92rem;
@@ -2951,14 +3000,29 @@ main {
     margin-bottom: 16px;
   }
 
-  .notice-box .btn-group {
+  .notice-box .btn-group,
+  .notice-box .notice-buttons {
     flex-direction: column;
-    width: 100%;
+    align-items: stretch;
+    inline-size: 100%;
   }
 
   .notice-box .btn {
-    width: 100%;
+    inline-size: 100%;
+    min-inline-size: 0;
     justify-content: center;
+  }
+
+  .support-contact-links {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+
+  .support-contact-sep {
+    display: none;
   }
 
   /* Legal Pages (Terms & Privacy) */
@@ -3035,6 +3099,7 @@ main {
   .footer-links {
     gap: 10px 14px;
     flex-wrap: wrap;
+    flex-wrap: balance;
     justify-content: center;
   }
 
