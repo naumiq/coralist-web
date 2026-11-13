@@ -717,7 +717,7 @@ main {
   left: 50%;
   transform: translateX(-50%);
   width: 420px;
-  height: 540px;
+  height: 640px;
   background: radial-gradient(ellipse at center, rgba(4, 44, 80, 0.11) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 75%);
   filter: blur(40px);
   pointer-events: none;
@@ -726,11 +726,11 @@ main {
 
 
 
-/* Phone Mockup Frame - Scaled down 25% (435px max-width) */
+/* Phone Mockup Frame - Scaled down 25% (420px max-width) */
 .phone-mockup-frame {
   width: 100%;
-  max-width: 435px;
-  border-radius: 22px;
+  max-width: 420px;
+  border-radius: 24px;
   padding: 0;
   background: transparent;
   border: none;
@@ -757,7 +757,7 @@ main {
 .gallery-slides {
   position: relative;
   width: 100%;
-  aspect-ratio: 764 / 1024;
+  aspect-ratio: 1320 / 2868;
   overflow: hidden;
   border-radius: 24px;
   background: #edf4fa;
@@ -2812,7 +2812,7 @@ main {
     justify-content: center;
     gap: 6px;
     width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   .indicator-dot {
@@ -3142,7 +3142,7 @@ main {
     width: 100%;
     max-width: 360px;
     border-radius: 20px;
-    padding: 5px;
+    padding: 0;
   }
 
   .showcase-text-col h3 {

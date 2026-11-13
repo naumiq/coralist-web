@@ -105,11 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const featureItems = document.querySelectorAll('.feature-list .feature-item');
 
     const slideData = [
-      { title: 'Parameters & Stability', sub: '1 / 5' },
-      { title: 'Digital Tank Logbook', sub: '2 / 5' },
-      { title: 'Smart AI Analyses & Advice', sub: '3 / 5' },
-      { title: 'Smart Task Scheduler', sub: '4 / 5' },
-      { title: '24/7 AI Marine Expert', sub: '5 / 5' }
+      { title: 'Parameters & Dials', sub: '1 / 7' },
+      { title: 'Stability Index Trends', sub: '2 / 7' },
+      { title: 'Smart AI Analyses & Advice', sub: '3 / 7' },
+      { title: '24/7 AI Marine Expert', sub: '4 / 7' },
+      { title: 'Smart Task Scheduler', sub: '5 / 7' },
+      { title: 'Digital Tank Logbook', sub: '6 / 7' },
+      { title: 'Plans & Pricing', sub: '7 / 7' }
     ];
 
     let currentIndex = 0;
